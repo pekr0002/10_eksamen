@@ -1,0 +1,8 @@
+@import "reset.css";
+@import "layout.css";
+
+html {
+  --black: #000000;
+  --white: #ffffff;
+  --OffWhite: #f0f6ee;
+}
