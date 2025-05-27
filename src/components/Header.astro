@@ -3,15 +3,56 @@
 ---
 
 <header>
-  <a href="index.html">Forside</a>
-  <a href="OmSpillet">Om spillet</a>
-  <a href="Galleri">Galleri</a>
+  <div id="headerLeft">
+    <a href="index.html">Forside</a>
+    <a href="OmSpillet">Om spillet</a>
+    <a href="Galleri">Galleri</a>
+  </div>
   <a href="
     index.html">
     <img src="greenLogo.svg" alt="logo" />
   </a>
-  <a href="Events">Events</a>
-  <a href="Kontakt">Spil med os</a>
+  <div id="headerRight">
+    <a href="Events">Events</a>
+    <a id="spilMedOs" href="Kontakt">Spil med os</a>
+  </div>
 </header>
 
-<style></style>
+<style>
+  header {
+    background-color: var(--White);
+    display: grid;
+    /* grid columns calculated so that the 4th (25vw with logo) is centered
+    grid-template-columns: 12.5vw 12.5vw 12.5vw 25vw 18.75vw 18.75vw; */
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1rem 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .headerLeft {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .headerRight {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  img {
+    height: 4.5rem;
+    width: auto;
+    justify-self: center;
+  }
+
+  #spilMedOs {
+    background-color: var(--Red100);
+    color: var(--White);
+    font-weight: 400;
+    padding: 0.5rem 1.5rem;
+    border-radius: var(--BorderRadiusBig);
+  }
+</style>

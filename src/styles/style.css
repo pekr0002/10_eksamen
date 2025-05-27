@@ -14,6 +14,15 @@ html {
   --Green100: #4c9e7d;
   --Green80: #77b89e;
   --GreenSecondary: #acdea0;
+
+  /* border radius */
+  --BorderRadiusBig: 30px;
+  --BorderRadiusSmall: 15px;
+}
+
+main {
+  /* change marging when we actually have some content in main */
+  margin: 0 3rem;
 }
 
 /* Fonts */
@@ -45,12 +54,8 @@ p {
 
 a {
   font-family: "Oswald", sans-serif;
-  font-size: 2rem;
+  font-size: 1.7rem;
   color: var(--Black);
   text-decoration: none;
   font-weight: 600;
-}
-
-header {
-  background-color: var(--White);
 }
