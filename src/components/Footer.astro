@@ -3,35 +3,41 @@ import WhiteButton from "./whiteButton.astro";
 ---
 
 <footer>
-  <img id="logo" src="whiteLogo.svg" alt="Logo" />
-  <!-- <p>
+  <div id="logoAndButton">
+    <img id="logo" src="whiteLogo.svg" alt="Logo" />
+    <!-- <p>
     Er du interesseret i at spille med os, eller har du spørgsmål, så kontakt os
     gerne. Vi glæder os til at høre fra dig.
   </p> -->
-  <div class="button">
-    <WhiteButton Text="Kontakt os" Link="Kontakt" />
+    <div class="button">
+      <WhiteButton Text="Kontakt os" Link="Kontakt" />
+    </div>
   </div>
-  <h3>Adresse</h3>
-  <ul id="ulAddress">
-    <li>Hillerød Bowls Klub</li>
-    <li>c/o Bent Christiansen</li>
-    <li>Hermann Justvej 7</li>
-    <li>3400 Hillerød</li>
-  </ul>
-  <ul>
-    <li>CVR: 34748128</li>
-    <li>Mail: bec3400@gmail.com</li>
-  </ul>
-  <h3>Formand</h3>
-  <ul>
-    <li>Michael Wolff Hansen</li>
-    <li>Mail: michael.wolff@hotmail.com</li>
-    <li>Tlf: 71 78 50 40</li>
-  </ul>
-  <h3 id="socialeMedierText">Sociale Medier</h3>
-  <div class="grid_2rem-auto">
-    <img id="instagramLogo" src="https://cataas.com/cat" alt="instagram" />
-    <a id="instagramText" href=""><p>Instagram</p></a>
+  <div id="gridColumn2">
+    <h3>Adresse</h3>
+    <ul id="ulAddress">
+      <li>Hillerød Bowls Klub</li>
+      <li>c/o Bent Christiansen</li>
+      <li>Hermann Justvej 7</li>
+      <li>3400 Hillerød</li>
+    </ul>
+    <ul>
+      <li>CVR: 34748128</li>
+      <li>Mail: bec3400@gmail.com</li>
+    </ul>
+  </div>
+  <div id="gridColumn3">
+    <h3>Formand</h3>
+    <ul>
+      <li>Michael Wolff Hansen</li>
+      <li>Mail: michael.wolff@hotmail.com</li>
+      <li>Tlf: 71 78 50 40</li>
+    </ul>
+    <h3 id="socialeMedierText">Sociale Medier</h3>
+    <div class="grid_2rem-auto">
+      <img id="instagramLogo" src="https://cataas.com/cat" alt="instagram" />
+      <a id="instagramText" href=""><p>Instagram</p></a>
+    </div>
   </div>
 </footer>
 
@@ -84,5 +90,32 @@ import WhiteButton from "./whiteButton.astro";
 
   #socialeMedierText {
     padding-bottom: 0;
+  }
+
+  @media (min-width: 800px) {
+    footer {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5rem;
+      padding: 5rem;
+      justify-content: center;
+    }
+
+    #logoAndButton {
+      display: grid;
+      grid-template-rows: auto auto;
+    }
+
+    .button {
+      width: 25vw;
+      grid-row: 1;
+      margin: 0;
+    }
+
+    #logo {
+      width: 25vw;
+      padding: 0;
+      grid-row: 2;
+    }
   }
 </style>
