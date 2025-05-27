@@ -2,7 +2,55 @@
 @import "layout.css";
 
 html {
-  --black: #000000;
-  --white: #ffffff;
+  /* Colors */
+  --Black: #000000;
+  --White: #ffffff;
   --OffWhite: #f0f6ee;
+  --Red100: #d71330;
+  --Red80: #ff5757;
+  --Red60: #eb7b7b;
+  --Red40: #ffaeae;
+  --Red20: #f7d2ce;
+  --Green100: #4c9e7d;
+  --Green80: #77b89e;
+  --GreenSecondary: #acdea0;
+}
+
+/* Fonts */
+
+h1 {
+  font-family: "Oswald", sans-serif;
+  font-size: 2.5rem;
+  color: var(--Black);
+}
+
+h2 {
+  font-family: "Cabin", sans-serif;
+  font-size: 2rem;
+  color: var(--Red100);
+}
+
+h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--Black);
+}
+
+p {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: var(--Black);
+}
+
+a {
+  font-family: "Oswald", sans-serif;
+  font-size: 2rem;
+  color: var(--Black);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+header {
+  background-color: var(--White);
 }
