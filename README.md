@@ -6,7 +6,7 @@ Alt på engelsk undtagen pages (og README ;))
 # Navngivning:
 
 TitleCase for:
-- variabler
+- html/css variabler
 - astro
 - billeder
 
