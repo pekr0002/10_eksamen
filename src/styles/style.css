@@ -18,11 +18,16 @@ html {
   /* border radius */
   --BorderRadiusBig: 30px;
   --BorderRadiusSmall: 15px;
+
+  /* set background color for all pages */
+  background-color: var(--OffWhite);
+
+  /* box shadow */
+  --BoxShadow: 0.5rem 0.5rem 0.5rem #7e7e7e25;
 }
 
 main {
-  /* change marging when we actually have some content in main */
-  margin: 0 3rem;
+  margin: 0 1rem;
 }
 
 /* Fonts */
@@ -31,12 +36,15 @@ h1 {
   font-family: "Oswald", sans-serif;
   font-size: 2.5rem;
   color: var(--Black);
+  text-transform: uppercase;
 }
 
 h2 {
   font-family: "Cabin", sans-serif;
   font-size: 2rem;
   color: var(--Red100);
+  text-transform: uppercase;
+  padding: 0.8rem 0 0.2rem 0;
 }
 
 h3 {
@@ -50,6 +58,7 @@ p {
   font-family: "Inter", sans-serif;
   font-size: 1rem;
   color: var(--Black);
+  padding: 1.5rem 0;
 }
 
 a {

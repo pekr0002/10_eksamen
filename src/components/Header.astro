@@ -22,12 +22,13 @@
   header {
     background-color: var(--White);
     display: grid;
-    /* grid columns calculated so that the 4th (25vw with logo) is centered
+    /* grid columns calculated so that the 4th column (25vw) with the logo is centered:
     grid-template-columns: 12.5vw 12.5vw 12.5vw 25vw 18.75vw 18.75vw; */
     grid-template-columns: repeat(3, 1fr);
     padding: 1rem 0;
     align-items: center;
     text-align: center;
+    border-bottom: 1px solid var(--Black);
   }
 
   .headerLeft {

@@ -1,4 +1,6 @@
 ---
+import RedButton from "../components/RedButton.astro";
+import WhiteButton from "../components/whiteButton.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -6,18 +8,18 @@ import Layout from "../layouts/Layout.astro";
   <header></header>
 
   <main>
-    <h2>Velkommen til</h2>
-    <h1>Hillerød Bowls Klub</h1>
+    <div id="heroText">
+      <h2 class="center">Velkommen til</h2>
+      <h1 class="center">Hillerød Bowls Klub</h1>
+    </div>
     <!-- hero: -->
     <img
+      class="heroImage"
       src="https://cataas.com/cat"
       alt="Hillerød Bowls Klub på Kulsvigergården"
     />
     <!-- Lillemand: -->
-    <img
-      src="https://cataas.com/cat"
-      alt="Hillerød Bowls Klub på Kulsvigergården"
-    />
+    <img src="https://cataas.com/cat" alt="Lilemand, vores maskot" />
     <h2>Hvor og hvornår</h2>
     <p>
       Hver onsdag hygger vi os med spillet og hinandens selskab på
@@ -26,30 +28,30 @@ import Layout from "../layouts/Layout.astro";
       Man skal ikke medbringe andet end sit gode humør.
     </p>
     <!-- RedButton, Kontakt os her -->
-    <img
-      src="https://cataas.com/cat"
-      alt="Hillerød Bowls Klub på Kulsvigergården"
-    />
-    <h2>Hvad er bowls?</h2>
-    <p>
-      Vi spiller English Short Mat Bowling (ESMB på lange måtter, som vi ruller
-      ud. Målet ved spillet er at rulle sin bowls boldt så at den kommer tættest
-      muligt på den markør, som er på den anden side af banen. Der er dog en bar
-      på banen som gør, at man skal rulle sin bowls i en bue. Derfor er bowlen
-      assymetrisk. Du kan læse mere om reglerne her.
-    </p>
-    <!-- WhiteButton, Mere om bowls -->
-    <img
-      src="https://cataas.com/cat"
-      alt="Hillerød Bowls Klub på Kulsvigergården"
-    />
+    <div class="center">
+      <RedButton />
+    </div>
+    <img class="image" src="https://cataas.com/cat" alt="..." />
+    <div id="hvadErBowls">
+      <h2>Hvad er bowls?</h2>
+      <p>
+        Vi spiller English Short Mat Bowling (ESMB på lange måtter, som vi
+        ruller ud. Målet ved spillet er at rulle sin bowls boldt så at den
+        kommer tættest muligt på den markør, som er på den anden side af banen.
+        Der er dog en bar på banen som gør, at man skal rulle sin bowls i en
+        bue. Derfor er bowlen assymetrisk. Du kan læse mere om reglerne her.
+      </p>
+      <!-- WhiteButton, Mere om bowls -->
+      <WhiteButton />
+      <img class="image" src="https://cataas.com/cat" alt="..." />
+    </div>
     <h2>Events og Begivenheder</h2>
     <p>
       Vi spiller hver onsdag, men afholder også interne turneringer, såvel som
       deltager i danske turneringer. Kig her, for at se kalenderen med vores
       begivenheder.
     </p>
-    <!-- GreenButton -->
+    <!-- <GreenButton /> -->
     <p>
       Klubben afholder hvert år to fester. Sommerfesten er en frokost et sted i
       sommerlandet og julefrokosten afvikles som regel i et festlokale og
@@ -61,3 +63,32 @@ import Layout from "../layouts/Layout.astro";
 
   <footer></footer>
 </Layout>
+
+<style>
+  #heroText {
+    background-color: var(--White);
+    padding: 2.5rem 0;
+  }
+
+  .center {
+    justify-self: center;
+    text-align: center;
+  }
+
+  .heroImage {
+    width: 100vw;
+    justify-self: center;
+  }
+  .image {
+    border-radius: var(--BorderRadiusBig);
+    padding: 1rem 0;
+  }
+
+  #hvadErBowls {
+    background-color: var(--White);
+    border-radius: var(--BorderRadiusBig);
+    padding: 1rem 1.5rem;
+    box-shadow: var(--BoxShadow);
+    margin-bottom: 1rem;
+  }
+</style>
