@@ -1,6 +1,117 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import RedButton from "../components/RedButton.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
+  <h1>Kontakt</h1>
+  <p id="kontaktText">
+    Hvis du er interresseret I at blive medlem eller bare vil kigge forbi en
+    dag, så skriv venligst en besked. Vi vender tilbage til dig med et svar
+    snarest muligt. <br />
+    <br />
+    Vi håber at se dig når vi spiller hver onsdag. <br /> Med venlig hilsen bestyrelsen.
+  </p>
+  <div class="contactFormular">
+    <h2>Skriv til os</h2>
+    <form action="action_page.php">
+      <p class="label">Navn</p>
+      <!-- <label for="name">Navn</label> -->
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Skriv her..."
+        required
+      />
+      <p class="label">E-mail</p>
+      <!-- <label for="email">E-mail</label> -->
+      <input
+        type="text"
+        id="email"
+        name="email"
+        placeholder="Skriv her..."
+        required
+      />
+      <p class="label">Besked</p>
+      <!-- <label for="message">Besked</label> -->
+      <input
+        type="text"
+        id="message"
+        name="message"
+        placeholder="Skriv her..."
+        required
+      />
+      <RedButton id="submitButton" Text="Send besked" />
+    </form>
+
+    <h3>Adresse</h3>
+    <!-- <img src="" alt=""> -->
+    <p>Pibe Møllevej 7, 3400 Hillerød</p>
+    <h3>Sociale Medier</h3>
+    <!-- <img src="" alt="">  -->
+    <p>Instagram</p>
+    <h2>Formand</h2>
+    <p>Michael Wolff Hansen</p>
+    <h3>Formand tlf.</h3>
+    <!-- <img src="" alt="">  -->
+    <p>71 78 50 40</p>
+    <h3>Formand e-mail</h3>
+    <!-- <img src="" alt="">  -->
+    <p>michael.wolff@hotmail.com</p>
+  </div>
+
+  <!-- BESTYRRELSE??????? -->
 </Layout>
+
+<style>
+  h1 {
+    padding: 1.5rem 2rem 0 2rem;
+  }
+
+  h3 {
+    padding: 0rem 1rem;
+    margin-bottom: -0.8rem;
+  }
+
+  #kontaktText {
+    padding: 1rem 2rem;
+  }
+
+  .contactFormular {
+    background-color: var(--White);
+    border-radius: var(--BorderRadiusBig);
+    box-shadow: var(--BoxShadow);
+    padding: 1rem;
+    margin: 1rem 2rem;
+  }
+
+  input[type="text"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 0px solid var(--Black);
+    border-radius: var(--BorderRadiusSmall);
+    box-sizing: border-box;
+    resize: vertical;
+    box-shadow: inset var(--BoxShadow);
+  }
+
+  .label {
+    padding: 1.5rem 0.5rem 0.5rem 0.5rem;
+  }
+
+  #message {
+    height: 9rem;
+  }
+
+  .contactFormular h2 {
+    padding: 1rem;
+  }
+
+  .contactFormular h3 {
+    padding: 0 1rem;
+    margin-bottom: -0.8rem;
+  }
+</style>
