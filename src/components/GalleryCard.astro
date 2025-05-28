@@ -1,0 +1,32 @@
+---
+const Year = Astro.props.Year;
+const Name = Astro.props.Name;
+const Type = Astro.props.Type;
+---
+
+<article class="card">
+  <h2>{Type} {Year}</h2>
+  <h1>{Name}</h1>
+  <img src="https://cataas.com/cat" alt="instagram" />
+</article>
+
+<style>
+  h2 {
+  }
+  article {
+    border-radius: 15px;
+    display: flex;
+    max-width: 250px;
+    padding: 7px 8px;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    background-color: var(--white);
+    margin: 0 auto;
+  }
+  .card img {
+    aspect-ratio: 233.12/301.71;
+    width: 233.117px;
+    object-fit: cover;
+  }
+</style>

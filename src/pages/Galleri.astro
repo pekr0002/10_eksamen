@@ -1,6 +1,92 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import GalleryCard from "../components/GalleryCard.astro";
+import SelectButton from "../components/SelectButton.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
+  <h1>Gallery</h1>
+  <div class="selector">
+    <SelectButton Text="Galleri" Link="kontakt.html" />
+    <SelectButton Text="Scoremestre" Link="kontakt.html" />
+    <SelectButton Text="Klubmestre" Link="kontakt.html" />
+    <SelectButton Text="Julemestre" Link="kontakt.html" />
+  </div>
+  <div class="pictureGrid">
+    <img src="https://cataas.com/cat" alt="instagram" id="picture1" />
+    <img src="https://cataas.com/cat" alt="instagram" />
+    <img src="https://cataas.com/cat" alt="instagram" />
+    <img src="https://cataas.com/cat" alt="instagram" id="picture4" />
+  </div>
+  <div class="grid">
+    <div class="scoreMestre">
+      <GalleryCard Type="Scoremester" Year="2019" Name="first child" />
+      <GalleryCard Type="Scoremester" Year="2019" Name="ropfkoerijger" />
+      <GalleryCard Type="Scoremester" Year="2019" Name="Gyda Jensen" />
+      <GalleryCard Type="Scoremester" Year="2019" Name="Gyda Jensen" />
+      <GalleryCard Type="Scoremester" Year="2019" Name="Gyda Jensen" />
+    </div>
+    <div class="klubMestre">
+      <GalleryCard Type="Klubmester" Year="2024" Name="Ivan Søndergaard" />
+      <GalleryCard Type="Klubmester" Year="2023" Name="Ole Martinsen" />
+      <GalleryCard Type="Klubmester" Year="2022" Name="Bent Engelhardt" />
+      <GalleryCard Type="Klubmester" Year="2021" Name="Jytte Jensen" />
+      <GalleryCard Type="Klubmester" Year="2020" Name="Jytte Jensen" />
+      <GalleryCard Type="Klubmester" Year="2019" Name="Svend-Aage Nielsen" />
+      <GalleryCard Type="Klubmester" Year="2018" Name="Gyda Jensen" />
+      <GalleryCard Type="Klubmester" Year="2017" Name="Birgit Y.P. Hansen" />
+      <GalleryCard Type="Klubmester" Year="2016" Name="Preben Jespergaard" />
+      <GalleryCard Type="Klubmester" Year="2015" Name="Inge Lise Olsen" />
+      <GalleryCard Type="Klubmester" Year="2014" Name="Erik Andersen" />
+      <GalleryCard Type="Klubmester" Year="2013" Name="Svend-Aage Nielsen" />
+      <GalleryCard Type="Klubmester" Year="2012" Name="Erik Andersen" />
+      <GalleryCard Type="Klubmester" Year="2010" Name="Finn J. Petersen" />
+      <GalleryCard Type="Klubmester" Year="2008" Name="Torben Hansen" />
+    </div>
+    <div class="galleri">
+      <img src="https://cataas.com/cat" alt="instagram" />
+      <img src="https://cataas.com/cat" alt="instagram" />
+      <img src="https://cataas.com/cat" alt="instagram" />
+      <img src="https://cataas.com/cat" alt="instagram" />
+      <img src="https://cataas.com/cat" alt="instagram" />
+      <img src="https://cataas.com/cat" alt="instagram" />
+      <img src="https://cataas.com/cat" alt="instagram" />
+      <img src="https://cataas.com/cat" alt="instagram" />
+    </div>
+  </div>
 </Layout>
+<style>
+  .scoreMestre,
+  .klubMestre,
+  .galleri {
+    display: contents;
+  }
+  .pictureGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #picture1 {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    aspect-ratio: 366/245;
+    object-fit: cover;
+  }
+
+  #picture4 {
+    grid-column: 1/3;
+    grid-row: 3/4;
+  }
+  .grid {
+    display: grid;
+    grid-row: 1fr auto;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    margin: 0 auto;
+  }
+
+  .selector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+</style>
