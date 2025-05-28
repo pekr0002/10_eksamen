@@ -4,7 +4,7 @@ const Name = Astro.props.Name;
 const Type = Astro.props.Type;
 
 const { product } = Astro.props;
-const Url = `../../public/gallerypage/${product.cup}/${product.cup}${product.year}.png`;
+const Url = `../../public/gallerypage/${product.cup}/${product.cup}${product.year}.webp`;
 console.log(product);
 ---
 
@@ -30,7 +30,7 @@ console.log(product);
   }
   article img {
     aspect-ratio: 233.12/301.71;
-    width: 233.117px;
+    max-width: 233.117px;
     object-fit: cover;
   }
 </style>
