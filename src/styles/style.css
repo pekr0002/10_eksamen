@@ -28,6 +28,7 @@ html {
 
 main {
   margin: 0 1rem;
+  max-width: 1200px;
 }
 
 /* Fonts */
