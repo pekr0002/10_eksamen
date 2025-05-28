@@ -1,0 +1,138 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <h1>Om spillet</h1>
+  <h2>Hvordan spiller man?</h2>
+  <div class="grid_2-1">
+    <p id="hvordanSpillerManText">
+      Bowls er kugler, der er tungere i den side, der bærer fabrikantens logo.
+      Herved vil en bowl under løbet kurve mod den tunge side og således kunne
+      ramme jack'en uden at berøre blokken, en tværstillet forhindring på banen. <br
+      />
+      <br />
+      Bowls kan spilles med to hold med mellem en og fire deltagere på hvert hold.
+      Alle spillere får samme antal bowls. <br />
+      <br /> Det hold, der skal starte, anbringer den lille kugle kaldet ”jack”en
+      vilkårligt på den hvide midterlinie nær banens ende. Den første spiller fra
+      hold A spiller sin første bowl så tæt som muligt til jack'en. Herefter spiller
+      den første spiller hold B sin bowl. Første spiller på hold A spiller så sin
+      anden bowl og derefter første spiller fra det hold B, indtil sidste bowl er
+      spillet. Herefter spiller første holds anden spiller skiftevis med det andet
+      holds anden spiller på samme måde, indtil alle spillere har spillet alle deres
+      bowls. Hermed er runden færdig. Spillerækkefølgen skal holdes under hele spillet.
+    </p>
+    <div>
+      <p>Bowls består af:</p>
+      <ul>
+        <li>En måtte på ca. 14 x 2 meter</li>
+        <li>4 sæt af 4 bowls (kugler)</li>
+        <li>1 jack (den lille kugle)</li>
+        <li>2 fendere</li>
+        <li>1 blok</li>
+        <li>2 fodmåtter</li>
+      </ul>
+    </div>
+    <img
+      id="illustration"
+      src="https://cataas.com/cat"
+      alt="Hillerød Bowls Klub på Kulsvigergården"
+    />
+  </div>
+  <h2>Regeler</h2>
+  <div class="grid_1-2">
+    <p>
+      Bowls der er ude skal fjernes fra banen, så snart de ligger stille. Når en
+      runde er færdig, giver alle de bowls der ikke er ude, og som et hold har
+      nærmere jack'en end det andet holds nærmeste bowl, et point hver.
+    </p>
+    <ul>
+      <li>
+        Bowls skal spilles med fødderne indenfor fodmåttens sidelinjer, med en
+        fod på måtten
+      </li>
+      <li>Bowls må aldrig kastes, men skal trilles</li>
+      <li>Bowls skal spilles indenfor de to linjer på fodmåtten</li>
+      <li>
+        Bowls er ude, hvis de triller uden for banen eller ikke når frem over
+        den hvide grænsestreg før jack'en
+      </li>
+      <li>Bowls er ude hvis de rammer blokken eller går i grøften</li>
+    </ul>
+  </div>
+  <!-- DropDown, Interview -->
+  <p>Se her interviewet med formanden, Michael Wolff Hansen</p>
+  <!-- video -->
+  <!-- DropDown, Historie -->
+  <p>
+    Bowls - eller Lawn Bowls - har rødder i Ægypten for 5.000 år siden, hvorfra
+    det har udviklet sig. I den engelske verden er Bowls et meget udbredt spil.
+    Bowls blev tidligere afviklet som underholdning for adelen på slottenes og
+    herregårdenes tæt klippede græsplæner. Nu spilles det af unge og ældre i
+    enhver engelsk by, også i lande med historisk tilknytning til England.
+  </p>
+  <!-- grønne kugler -->
+  <p>
+    Året var 1993 da en gruppe af aktive seniorer første gang blev præsenteret
+    for 'Bowls' i Hillerød. Initiativtageren var Mike Pestell, der med sit firma
+    Anglo-bowls håbede på en stor dansk tilslutning og selv havde investeret i
+    det kostbare udstyr. Der blev indgået en aftale om leje af udstyr hos
+    Anglobowls og baneleje i Hillerød Tenniscenter, hvorefter sporten over de
+    næste år langsomt voksede, indtil man i 1996 enedes om at etablere Hillerød
+    Bowlsklub. <br /><br />
+    Hillerød Bowlsklub stiftedes på generalforsamlingen den 7. oktober 1996 og har
+    siden tydeliggjort sig i lokal området, så der hver onsdag kan spilles på ti
+    måtter i Hillerød. <br />
+    <br />
+    Spillet, er især henvendt til seniorer med mulighed for at spille i dagtimerne
+    og således kan mødes med andre i et aktivt fællesskab om såvel spillet som det
+    sociale samvær.
+  </p>
+  <!-- DropDown, Vedtægter -->
+  <!-- SKAL VI HAVE MED ELLER EJ?!?!?!?! -->
+</Layout>
+
+<style>
+  h1 {
+    padding: 2rem 1rem 1rem 1rem;
+  }
+
+  ul {
+    padding: 1rem;
+    list-style-type: disc;
+    margin: -1.5rem 1rem 1rem 1rem;
+  }
+
+  #illustration {
+    padding: 1rem;
+  }
+
+  @media (min-width: 800px) {
+    .grid_2-1 {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      column-gap: 5rem;
+    }
+
+    ul {
+      margin: 0;
+    }
+
+    #hvordanSpillerManText {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+    }
+
+    #illustration {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .grid_1-2 {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      column-gap: 5rem;
+    }
+  }
+</style>

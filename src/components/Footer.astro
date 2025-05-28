@@ -1,33 +1,122 @@
 ---
-import WhiteButton from "./whiteButton.astro";
-
-
+import WhiteButton from "./WhiteButton.astro";
 ---
-<footer>
 
-    <img src="whiteLogo.svg" alt="Logo">
-    <WhiteButton Text="Kontakt os" Link="kontakt.html" />
-    
-    <ul>
-        <li>Hillerød Bowls Klub</li>
-        <li>c/o Bent Christiansen</li>
-        <li>Hermann Justvej 7</li>
-        <li>3400 Hillerød</li>
+<footer>
+  <div id="logoAndButton">
+    <img id="logo" src="whiteLogo.svg" alt="Logo" />
+    <!-- <p>
+    Er du interesseret i at spille med os, eller har du spørgsmål, så kontakt os
+    gerne. Vi glæder os til at høre fra dig.
+  </p> -->
+    <div class="button">
+      <WhiteButton Text="Kontakt os" Link="Kontakt" />
+    </div>
+  </div>
+  <div id="gridColumn2">
+    <h3>Adresse</h3>
+    <ul id="ulAddress">
+      <li>Hillerød Bowls Klub</li>
+      <li>c/o Bent Christiansen</li>
+      <li>Hermann Justvej 7</li>
+      <li>3400 Hillerød</li>
     </ul>
     <ul>
-        <li>CVR: 34748128</li>
-        <li>Mail: bec3400@gmail.com</li>
+      <li>CVR: 34748128</li>
+      <li>Mail: bec3400@gmail.com</li>
     </ul>
-    <h3>
-        Sociale Medier
-    </h3>
+  </div>
+  <div id="gridColumn3">
+    <h3>Formand</h3>
     <ul>
-        <li><img src="https://cataas.com/cat" alt="instagram"> Instagram</li>
+      <li>Michael Wolff Hansen</li>
+      <li>Mail: michael.wolff@hotmail.com</li>
+      <li>Tlf: 71 78 50 40</li>
     </ul>
+    <h3 id="socialeMedierText">Sociale Medier</h3>
+    <div class="grid_2rem-auto">
+      <img id="instagramLogo" src="https://cataas.com/cat" alt="instagram" />
+      <a id="instagramText" href=""><p>Instagram</p></a>
+    </div>
+  </div>
 </footer>
 
 <style>
-footer{
-    background: #77B89E;
-}
+  footer {
+    background: var(--Green80);
+    padding: 0 17vw;
+    padding-bottom: 2.5rem;
+    margin-top: 2.5rem;
+  }
+
+  #logo {
+    width: 80vw;
+    justify-self: center;
+    padding: 1.75rem 0 0.7rem 0;
+  }
+
+  .button {
+    justify-self: center;
+    margin-bottom: 2.5rem;
+  }
+
+  h3 {
+    padding-bottom: 1rem;
+  }
+
+  ul {
+    padding-bottom: 1.8rem;
+    list-style: none;
+  }
+
+  #ulAddress {
+    padding-bottom: 1rem;
+  }
+
+  .grid_2rem-auto {
+    display: grid;
+    grid-template-columns: 2rem auto;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  #instagramLogo {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  #instagramText {
+    font-weight: 400;
+  }
+
+  #socialeMedierText {
+    padding-bottom: 0;
+  }
+
+  @media (min-width: 800px) {
+    footer {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5rem;
+      padding: 5rem;
+      justify-content: center;
+    }
+
+    #logoAndButton {
+      display: grid;
+      grid-template-rows: auto auto;
+    }
+
+    .button {
+      width: 25vw;
+      grid-row: 1;
+      margin: 0;
+    }
+
+    #logo {
+      width: 25vw;
+      padding: 0;
+      grid-row: 2;
+    }
+  }
 </style>

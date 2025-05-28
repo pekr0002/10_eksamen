@@ -2,16 +2,150 @@
 
 ---
 
+
 <header>
-  <a href="index.html">Forside</a>
-  <a href="omBowls.html">Om bowls</a>
-  <a href="galleri.html">Galleri</a>
-  <a href="
+  <!-- Hamburger -->
+  <div class="hamburger" id="hamburger">☰</div>
+
+  <!-- Mobile -->
+  <nav id="mobileMenu" class="hidden">
+    <a href="index.html">Forside</a>
+    <a href="OmSpillet">Om spillet</a>
+    <a href="Galleri">Galleri</a>
+    <a href="Events">Events</a>
+    <a href="Kontakt">Spil med os</a>
+  </nav>
+
+  <!-- Desktop -->
+  <div id="headerLeft" class="desktopMenu">
+    <a href="index.html">Forside</a>
+    <a href="OmSpillet">Om spillet</a>
+    <a href="Galleri">Galleri</a>
+  </div>
+  <a id="logoContainer" href="
     index.html">
-    <img src="greenLogo.svg" alt="logo" />
+    <img id="logo" src="greenLogo.svg" alt="logo" />
   </a>
-  <a href="events.html">Events</a>
-  <a href="kontakt.html">Spil med os</a>
+  <div class="desktopMenu" id="headerRight">
+    <a href="Events">Events</a>
+    <a id="spilMedOs" href="Kontakt">Spil med os</a>
+  </div>
 </header>
 
-<style></style>
+<script type="module">
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  hamburger.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>
+
+<style>
+  /* Desktop: */
+  @media (min-width: 1000px) {
+    header {
+      background-color: var(--White);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 1rem 3rem;
+      text-align: center;
+      align-items: center;
+      border-bottom: 1px solid var(--Black);
+    }
+
+    .hamburger,
+    #mobileMenu {
+      display: none;
+    }
+
+    .desktopMenu {
+      display: flex;
+    }
+
+    #headerLeft {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.8rem;
+    }
+
+    #headerRight {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.8rem;
+    }
+
+    img {
+      width: 25vw;
+      height: auto;
+      justify-self: center;
+    }
+
+    a {
+      font-size: 2.2vw;
+    }
+
+    #spilMedOs {
+      background-color: var(--Red100);
+      color: var(--White);
+      font-weight: 400;
+      padding: 0.5rem 1.5rem;
+      border-radius: var(--BorderRadiusBig);
+    }
+  }
+  /* Mobile: */
+  @media (max-width: 999px) {
+    header {
+      background-color: var(--White);
+      border-bottom: 1px solid var(--Black);
+      display: grid;
+      grid-template-columns: 1fr 3fr 1fr;
+      gap: 2rem;
+    }
+    .desktopMenu {
+      display: none;
+    }
+
+    .hamburger {
+      display: block;
+      font-size: 2rem;
+      padding: 1rem;
+      justify-self: end;
+      grid-column: 3;
+    }
+
+    #mobileMenu {
+      display: flex;
+      flex-direction: column;
+      background-color: var(--White);
+      padding: 1rem;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      text-align: end;
+      border-bottom: 1px solid var(--Black);
+    }
+
+    #mobileMenu.hidden {
+      display: none;
+    }
+
+    #logoContainer {
+      grid-column: 2;
+      grid-row: 1;
+      align-self: center;
+      justify-self: center;
+    }
+
+    #logo {
+      height: 3rem;
+      width: auto;
+    }
+
+    a {
+      font-size: 2.5rem;
+    }
+  }
+</style>
+

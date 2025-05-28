@@ -2,7 +2,79 @@
 @import "layout.css";
 
 html {
-  --black: #000000;
-  --white: #ffffff;
+  /* Colors */
+  --Black: #000000;
+  --White: #ffffff;
   --OffWhite: #f0f6ee;
+  --Red100: #d71330;
+  --Red80: #ff5757;
+  --Red60: #eb7b7b;
+  --Red40: #ffaeae;
+  --Red20: #f7d2ce;
+  --Green100: #4c9e7d;
+  --Green80: #77b89e;
+  --GreenSecondary: #acdea0;
+
+  /* border radius */
+  --BorderRadiusBig: 30px;
+  --BorderRadiusSmall: 15px;
+
+  /* set background color for all pages */
+  background-color: var(--OffWhite);
+
+  /* box shadow */
+  --BoxShadow: 0.5rem 0.5rem 0.5rem #7e7e7e25;
+}
+
+main {
+  margin: 0 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Fonts */
+
+h1 {
+  font-family: "Oswald", sans-serif;
+  font-size: 2.5rem;
+  color: var(--Black);
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: "Cabin", sans-serif;
+  font-size: 2rem;
+  color: var(--Red100);
+  text-transform: uppercase;
+  padding: 0.8rem 1rem 0.2rem 1rem;
+}
+
+h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--Black);
+}
+
+p {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: var(--Black);
+  padding: 1.5rem 1rem;
+  line-height: 1.5rem;
+}
+
+a {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.7rem;
+  color: var(--Black);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+li {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: var(--Black);
+  line-height: 1.5rem;
 }
