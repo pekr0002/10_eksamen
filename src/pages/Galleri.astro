@@ -1,7 +1,33 @@
 ---
+//@ts-nocheck
 import GalleryCard from "../components/GalleryCard.astro";
 import SelectButton from "../components/SelectButton.astro";
 import Layout from "../layouts/Layout.astro";
+
+const url = "https://zyxwycthnsawqveghsdr.supabase.co/rest/v1/galleri";
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp5eHd5Y3RobnNhd3F2ZWdoc2RyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgzNDI1MDcsImV4cCI6MjA2MzkxODUwN30.oKnpJzXhTYqQFPO7ebhUAXa2BuuhEH7Mxzho0VghZeI";
+
+const options = {
+  headers: {
+    apikey: key,
+  },
+};
+
+const data = await fetch(url, options).then((res) => {
+  return res.json();
+});
+
+console.log(data);
+console.log("oirjgwjio");
+
+const formatDate = (dateString) =>
+  new Date(dateString).toLocaleDateString(undefined, {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+console.log(formatDate(data[0].event_date));
 ---
 
 <Layout>
@@ -19,15 +45,16 @@ import Layout from "../layouts/Layout.astro";
     <img src="https://cataas.com/cat" alt="instagram" id="picture4" />
   </div>
   <div class="grid">
+    {data.map((product) => <GalleryCard {product} />)}
     <div class="scoreMestre">
-      <GalleryCard Type="Scoremester" Year="2019" Name="first child" />
+      <!-- <GalleryCard Type="Scoremester" Year="2019" Name="first child" />
       <GalleryCard Type="Scoremester" Year="2019" Name="ropfkoerijger" />
       <GalleryCard Type="Scoremester" Year="2019" Name="Gyda Jensen" />
       <GalleryCard Type="Scoremester" Year="2019" Name="Gyda Jensen" />
-      <GalleryCard Type="Scoremester" Year="2019" Name="Gyda Jensen" />
+      <GalleryCard Type="Scoremester" Year="2019" Name="Gyda Jensen" /> -->
     </div>
     <div class="klubMestre">
-      <GalleryCard Type="Klubmester" Year="2024" Name="Ivan Søndergaard" />
+      <!-- <GalleryCard Type="Klubmester" Year="2024" Name="Ivan Søndergaard" />
       <GalleryCard Type="Klubmester" Year="2023" Name="Ole Martinsen" />
       <GalleryCard Type="Klubmester" Year="2022" Name="Bent Engelhardt" />
       <GalleryCard Type="Klubmester" Year="2021" Name="Jytte Jensen" />
@@ -41,7 +68,7 @@ import Layout from "../layouts/Layout.astro";
       <GalleryCard Type="Klubmester" Year="2013" Name="Svend-Aage Nielsen" />
       <GalleryCard Type="Klubmester" Year="2012" Name="Erik Andersen" />
       <GalleryCard Type="Klubmester" Year="2010" Name="Finn J. Petersen" />
-      <GalleryCard Type="Klubmester" Year="2008" Name="Torben Hansen" />
+      <GalleryCard Type="Klubmester" Year="2008" Name="Torben Hansen" /> -->
     </div>
     <div class="galleri">
       <img src="https://cataas.com/cat" alt="instagram" />
