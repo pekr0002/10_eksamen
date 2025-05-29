@@ -21,15 +21,16 @@ html {
 
   /* box shadow */
   --BoxShadow: 0.5rem 0.5rem 0.5rem #7e7e7e25;
+
   scroll-behavior: smooth;
+  /* set background color for all pages */
+  background-color: var(--OffWhite);
 }
 
 main {
   margin: 0 1rem;
   max-width: 1440px;
   margin: 0 auto;
-  /* set background color for all pages */
-  background-color: var(--OffWhite);
 }
 
 /* Fonts */
