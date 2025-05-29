@@ -32,9 +32,9 @@ console.log(formatDate(data[0].event_date));
 ---
 
 <Layout>
-  <h1>Gallery</h1>
+  <h1>Galleri</h1>
   <div class="selector">
-    <SelectButton Text="Galleri" Link="kontakt.html" />
+    <SelectButton Text="Galleri" Link="Galleri#gallerySection" />
     <SelectButton Text="Scoremestre" Link="kontakt.html" />
     <SelectButton Text="Klubmestre" Link="kontakt.html" />
     <SelectButton Text="Julemestre" Link="kontakt.html" />
@@ -66,17 +66,42 @@ console.log(formatDate(data[0].event_date));
     <ul>
       {data.map((product) => <GalleryCard {product} />)}
     </ul>
+  </div>
+  <h2>Galleri</h2>
 
-    <div class="galleri">
-      <img src="https://cataas.com/cat" alt="instagram" />
-      <img src="https://cataas.com/cat" alt="instagram" />
-      <img src="https://cataas.com/cat" alt="instagram" />
-      <img src="https://cataas.com/cat" alt="instagram" />
-      <img src="https://cataas.com/cat" alt="instagram" />
-      <img src="https://cataas.com/cat" alt="instagram" />
-      <img src="https://cataas.com/cat" alt="instagram" />
-      <img src="https://cataas.com/cat" alt="instagram" />
-    </div>
+  <div class="gallery" id="gallerySection">
+    <img
+      src="/public/gallerypage/galleri/galleryPicture1.webp"
+      alt="instagram"
+    />
+    <img
+      src="/public/gallerypage/galleri/galleryPicture2.webp"
+      alt="instagram"
+    />
+    <img
+      src="/public/gallerypage/galleri/galleryPicture3.webp"
+      alt="instagram"
+    />
+    <img
+      src="/public/gallerypage/galleri/galleryPicture4.webp"
+      alt="instagram"
+    />
+    <img
+      src="/public/gallerypage/galleri/galleryPicture5.webp"
+      alt="instagram"
+    />
+    <img
+      src="/public/gallerypage/galleri/galleryPicture6.webp"
+      alt="instagram"
+    />
+    <img
+      src="/public/gallerypage/galleri/galleryPicture7.webp"
+      alt="instagram"
+    />
+    <img
+      src="/public/gallerypage/galleri/galleryPicture8.webp"
+      alt="instagram"
+    />
   </div>
 </Layout>
 <style>
@@ -111,8 +136,22 @@ console.log(formatDate(data[0].event_date));
     grid-auto-rows: auto;
     margin: 0 auto;
     gap: 25px;
+    margin: 20px;
   }
 
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-auto-rows: auto;
+    margin: 0 auto;
+    gap: 25px;
+
+    margin: 20px;
+  }
+  .gallery img {
+    object-fit: cover;
+    aspect-ratio: 1/1;
+  }
   .selector {
     display: flex;
     flex-wrap: wrap;
