@@ -34,10 +34,10 @@ console.log(formatDate(data[0].event_date));
 <Layout>
   <h1>Galleri</h1>
   <div class="selector">
-    <SelectButton Text="Galleri" Link="Galleri#gallerySection" />
-    <SelectButton Text="Scoremestre" Link="kontakt.html" />
-    <SelectButton Text="Klubmestre" Link="kontakt.html" />
-    <SelectButton Text="Julemestre" Link="kontakt.html" />
+    <SelectButton Text="Galleri" Link="#gallerySection" />
+    <SelectButton Text="Scoremestre" Link="#galleryWinners" />
+    <SelectButton Text="Klubmestre" Link="#galleryWinners" />
+    <SelectButton Text="Julemestre" Link="#galleryWinners" />
   </div>
   <div class="pictureGrid">
     <img
@@ -61,12 +61,14 @@ console.log(formatDate(data[0].event_date));
       id="picture4"
     />
   </div>
-
-  <div class="grid">
-    <ul>
-      {data.map((product) => <GalleryCard {product} />)}
-    </ul>
-  </div>
+  <section id="galleryWinners">
+    <h2>"ud fra sortering"</h2>
+    <div class="grid">
+      <ul>
+        {data.map((product) => <GalleryCard {product} />)}
+      </ul>
+    </div>
+  </section>
   <h2>Galleri</h2>
 
   <div class="gallery" id="gallerySection">
@@ -153,8 +155,8 @@ console.log(formatDate(data[0].event_date));
     aspect-ratio: 1/1;
   }
   .selector {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   }
 
   @media (min-width: 800px) {
