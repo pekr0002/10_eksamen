@@ -8,29 +8,37 @@ const Url = `../../public/gallerypage/${product.cup}/${product.cup}${product.yea
 console.log(product);
 ---
 
-<article class={product.cup}>
-  <h2>{product.cup} {product.year}</h2>
-  <h1>{product.name}</h1>
-  <img src={Url} alt="billede blev ikke fundet" />
-</article>
-<!-- oooppsi -->
+<li>
+  <article class={product.cup}>
+    <h2>{product.cup} {product.year}</h2>
+    <h1>{product.name}</h1>
+    <img src={Url} alt="billede blev ikke fundet" />
+  </article>
+  <!-- oooppsi -->
+</li>
 <style>
+  li {
+    display: grid;
+  }
   h2 {
     text-transform: capitalize;
-    color: aqua;
+    color: var(--Green100);
+    font-size: 1.25rem;
   }
   h1 {
     text-transform: capitalize;
+    font-size: 1.5rem;
+    font-family: cabin, sans-serif;
   }
   article {
     border-radius: 15px;
-    display: flex;
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
     max-width: 250px;
     padding: 7px 8px;
-    flex-direction: column;
-    align-items: center;
     gap: 4px;
-    background-color: var(--white);
+    background-color: var(--White);
     margin: 0 auto;
   }
   article img {
