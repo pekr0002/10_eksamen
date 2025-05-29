@@ -19,16 +19,17 @@ html {
   --BorderRadiusBig: 30px;
   --BorderRadiusSmall: 15px;
 
-  /* set background color for all pages */
-  background-color: var(--OffWhite);
-
   /* box shadow */
   --BoxShadow: 0.5rem 0.5rem 0.5rem #7e7e7e25;
+
+  scroll-behavior: smooth;
+  /* set background color for all pages */
+  background-color: var(--OffWhite);
 }
 
 main {
   margin: 0 1rem;
-  max-width: 1100px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 

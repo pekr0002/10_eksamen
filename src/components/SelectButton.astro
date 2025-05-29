@@ -3,26 +3,29 @@ const Link = Astro.props.Link;
 const Text = Astro.props.Text;
 ---
 
-<a class="active" href={Link}>{Text}</a>
+<a class="" href={Link}>{Text}</a>
 
 <style>
   a {
     display: flex;
-    width: 300px;
-    height: 60px;
-    padding: 14px 79px;
+    width: 20rem;
+    height: 3.75rem;
+    padding: 1rem 4.8rem;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 0.5rem;
     flex-shrink: 0;
-    border-radius: var(--Corner-radius, 30px);
-    border: 2px solid var(--Basics-Sort, #000);
-    margin: 20px;
+    border-radius: var(--BorderRadiusBig);
+    border: 2px solid var(--Black);
+    font-weight: 400;
+    margin: 10px auto;
   }
 
-  .active {
-    background-color: aqua;
-    color: pink;
+  .active,
+  a:hover {
+    background-color: var(--Red100);
+    color: var(--White);
+    border: 2px solid var(--Red100);
   }
 </style>
 <script></script>
