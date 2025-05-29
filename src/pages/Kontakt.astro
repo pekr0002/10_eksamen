@@ -48,7 +48,9 @@ import Layout from "../layouts/Layout.astro";
           name="message"
           placeholder="Skriv her..."
           required></textarea>
-        <RedButton id="submitButton" Text="Send besked" />
+        <div id="submitButtonContainer">
+          <RedButton id="submitButton" Text="Send besked" />
+        </div>
       </form>
     </div>
 
@@ -158,6 +160,10 @@ import Layout from "../layouts/Layout.astro";
   .icons {
     width: 2rem;
     align-self: center;
+  }
+
+  #submitButtonContainer {
+    justify-self: center;
   }
 
   @media (min-width: 800px) {
