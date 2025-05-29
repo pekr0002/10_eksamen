@@ -13,18 +13,23 @@ import Layout from "../layouts/Layout.astro";
       <h1 class="center">Hillerød Bowls Klub</h1>
     </div>
     <img
-      id="heroImage"
-      src="https://cataas.com/cat"
-      alt="Hillerød Bowls Klub på Kulsvigergården"
+      id="heroImageMobile"
+      src="public/indexPage/hero.webp"
+      alt="Indendørs hal på Kulsvigergården"
+    />
+    <img
+      id="heroImageDesktop"
+      src="public/indexPage/heroWithLillemand.webp"
+      alt="Indendørs hal på Kulsvigergården"
     />
     <img
       id="lillemand"
-      src="https://cataas.com/cat"
+      src="public/lillemand.png"
       alt="Lilemand, vores maskot"
     />
     <div class="grid_1-1">
       <div class="rightAligned">
-        <h2>Hvor og hvornår</h2>
+        <h2 id="hvorText">Hvor og hvornår</h2>
         <p>
           Hver onsdag hygger vi os med spillet og hinandens selskab på
           Kulsviergården i Alsønderup. Vi spiller fra kl. 11:30 - 13:30. <br
@@ -37,7 +42,12 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </div>
       <div class="imageContainer">
-        <img class="image" src="https://cataas.com/cat" alt="..." />
+        <img
+          class="image"
+          id="hvorImage"
+          src="public/indexPage/kulsvigergaardenOutside.webp"
+          alt="..."
+        />
       </div>
     </div>
 
@@ -52,11 +62,10 @@ import Layout from "../layouts/Layout.astro";
           i en bue. Derfor er bowlen assymetrisk. Du kan læse mere om reglerne
           her.
         </p>
-        <!-- WhiteButton, Mere om bowls -->
         <WhiteButton Text="Mere om bowls" Link="OmSpillet" />
       </div>
       <div class="imageContainer" id="hvadErBowlsImage">
-        <img class="image" src="https://cataas.com/cat" alt="..." />
+        <img class="image" src="public/indexPage/gloggPause.webp" alt="..." />
       </div>
     </div>
 
@@ -98,30 +107,45 @@ import Layout from "../layouts/Layout.astro";
     padding: 2rem 0 2.8rem 0;
   }
 
+  #hvorText {
+    margin-top: -100px;
+  }
+
   .center,
   #contactButton {
     justify-self: center;
     text-align: center;
   }
 
-  #heroImage {
+  #heroImageDesktop {
+    display: none;
+  }
+
+  #heroImageMobile {
     width: 100vw;
-    height: 18rem;
+    height: 250px;
     object-fit: cover;
     justify-self: center;
   }
 
   #lillemand {
-    height: 10rem;
-    width: 10rem;
+    width: 40vw;
+    height: auto;
     object-fit: cover;
     position: relative;
-    top: -5rem;
+    top: -100px;
+    left: 50px;
+    /* display: none; */
   }
 
   .image {
     border-radius: var(--BorderRadiusBig);
-    padding: 1rem 0;
+    margin: 1rem 0;
+  }
+
+  #hvorImage {
+    margin: 1rem;
+    /* width: 90vw; */
   }
 
   #hvadErBowls {
@@ -129,29 +153,39 @@ import Layout from "../layouts/Layout.astro";
     border-radius: var(--BorderRadiusBig);
     padding: 1rem 1.8rem;
     box-shadow: var(--BoxShadow);
-    margin-bottom: 1rem;
+    margin: 1rem;
   }
 
   .grid_1-1 {
-    margin-top: -5rem;
+    /* margin-top: -5rem; */
   }
 
   @media (min-width: 800px) {
-    #heroImage {
-      width: 100vw;
-      height: 38rem;
+    #heroImageMobile {
+      display: none;
+    }
+
+    #heroImageDesktop {
+      display: initial;
+      height: 600px;
+      width: auto;
       object-fit: cover;
       justify-self: center;
       margin-bottom: -10rem;
     }
 
     #lillemand {
-      height: 10rem;
+      /* height: 10rem;
       width: 10rem;
       object-fit: cover;
       position: relative;
       top: -35rem;
-      left: 75vw;
+      left: 75vw; */
+      display: none;
+    }
+
+    #hvorText {
+      margin-top: 0px;
     }
 
     .grid_1-1 {
