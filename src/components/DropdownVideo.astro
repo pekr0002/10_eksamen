@@ -1,0 +1,52 @@
+---
+const Title = Astro.props.Title;
+const Paragraph = Astro.props.Paragraph;
+const Video = Astro.props.Video;
+---
+
+<article>
+  <div class="dropdown">
+    <span> <h2>{Title}</h2></span>
+    <div class="dropdownContent">
+      <p class="p1">{Paragraph}</p>
+      <video src={Video}></video>
+    </div>
+  </div>
+</article>
+
+<style>
+  article {
+    background-color: var(--White);
+    box-shadow: var(--BoxShadow);
+    border-radius: var(--BorderRadiusBig);
+    margin: 2rem auto;
+    padding: 1.5rem 1.5rem 1.5rem 2rem;
+  }
+
+  h2 {
+    padding: 0;
+    text-align: left;
+  }
+
+  p {
+    padding: 1rem 0;
+  }
+
+  .dropdown {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+
+  .dropdownContent {
+    display: none;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    overflow: auto;
+  }
+
+  .dropdown:hover .dropdownContent {
+    display: initial;
+  }
+</style>
