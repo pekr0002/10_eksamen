@@ -6,8 +6,20 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
+  <div id="subNavBar">
+    <a href="#hvordanText">Hvordan spiller man?</a>
+    <a href="#regeler">Regeler</a>
+    <a href="#interview">Interview med formanden</a>
+    <a href="#interview">Historie</a>
+    <a href="">Sponsorere</a>
+  </div>
   <h1>Om spillet</h1>
-  <h2>Hvordan spiller man?</h2>
+  <img
+    id="lillemand"
+    src="public/lillemand.png"
+    alt="Lillemand, vores maskot"
+  />
+  <h2 id="hvordanText">Hvordan spiller man?</h2>
   <div class="grid_2-1">
     <p id="hvordanSpillerManText">
       Bowls er kugler, der er tungere i den side, der bærer fabrikantens logo.
@@ -43,7 +55,7 @@ import Layout from "../layouts/Layout.astro";
       alt="Hillerød Bowls Klub på Kulsvigergården"
     />
   </div>
-  <h2>Regeler</h2>
+  <h2 id="regeler">Regeler</h2>
   <div class="grid_1-2">
     <p>
       Bowls der er ude skal fjernes fra banen, så snart de ligger stille. Når en
@@ -65,14 +77,15 @@ import Layout from "../layouts/Layout.astro";
     </ul>
   </div>
 
-  <DropdownVideo
-    Title="Interview med formanden"
-    Paragraph="Se her interviewet med formanden, Michael Wolff Hansen"
-    Video="https://fjordtv.b-cdn.net/90_bowlshd1080p23022023071828.movFLASH.mp4"
-  />
-  <!-- video -->
+  <div id="interview">
+    <DropdownVideo
+      Title="Interview med formanden"
+      Paragraph="Se her interviewet med formanden, Michael Wolff Hansen"
+      Video="https://fjordtv.b-cdn.net/90_bowlshd1080p23022023071828.movFLASH.mp4"
+    />
+  </div>
 
-  <div class="dropdownMobile">
+  <div class="dropdownMobile historie">
     <DropdownLongTextMobile
       Title="Historie"
       Paragraph1="Bowls - eller Lawn Bowls - har rødder i Ægypten for 5.000 år siden, hvorfra det har udviklet sig. I den engelske verden er Bowls et meget udbredt spil. Bowls blev tidligere afviklet som underholdning for adelen på slottenes og herregårdenes tæt klippede græsplæner. Nu spilles det af unge og ældre i enhver engelsk by, også i lande med historisk tilknytning til England."
@@ -82,7 +95,7 @@ import Layout from "../layouts/Layout.astro";
     />
   </div>
 
-  <div class="dropdownDesktop">
+  <div class="dropdownDesktop historie">
     <DropdownLongText
       Title="Historie"
       Paragraph1="Bowls - eller Lawn Bowls - har rødder i Ægypten for 5.000 år siden, hvorfra det har udviklet sig. I den engelske verden er Bowls et meget udbredt spil. Bowls blev tidligere afviklet som underholdning for adelen på slottenes og herregårdenes tæt klippede græsplæner. Nu spilles det af unge og ældre i enhver engelsk by, også i lande med historisk tilknytning til England."
@@ -96,6 +109,29 @@ import Layout from "../layouts/Layout.astro";
 <style>
   h1 {
     padding: 2rem 1rem 1rem 1rem;
+  }
+
+  #subNavBar {
+    background-color: var(--White);
+    padding: 1rem;
+    border-bottom: 1px solid var(--Black);
+    display: flex;
+    flex-direction: column;
+  }
+
+  #subNavBar a {
+    font-family: "Oswald", sans-serif;
+    font-size: 1rem;
+    color: var(--Black);
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  #lillemand {
+    display: none;
   }
 
   ul {
@@ -112,10 +148,33 @@ import Layout from "../layouts/Layout.astro";
     display: none;
   }
   @media (min-width: 800px) {
+    #subNavBar {
+      display: flex;
+      justify-content: space-around;
+      background-color: var(--White);
+      padding: 0.5rem;
+      border-bottom: 1px solid var(--Black);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
     .grid_2-1 {
       display: grid;
-      grid-template-columns: 2fr 1fr;
+      grid-template-columns: 3fr 2fr;
       column-gap: 5rem;
+    }
+
+    #lillemand {
+      display: initial;
+      width: 10vw;
+      position: relative;
+      left: 80vw;
+      top: -85px;
+      transform: scaleX(-1);
+    }
+
+    #hvordanText {
+      margin-top: -14vw;
     }
 
     ul {
@@ -134,7 +193,7 @@ import Layout from "../layouts/Layout.astro";
 
     .grid_1-2 {
       display: grid;
-      grid-template-columns: 1fr 2fr;
+      grid-template-columns: 2fr 3fr;
       column-gap: 5rem;
     }
 
