@@ -9,7 +9,9 @@ const Video = Astro.props.Video;
     <span> <h2>{Title}</h2></span>
     <div class="dropdownContent">
       <p class="p1">{Paragraph}</p>
-      <video src={Video}></video>
+      <video controls>
+        <source src={Video} type="video/mp4" />
+      </video>
     </div>
   </div>
 </article>
@@ -33,8 +35,7 @@ const Video = Astro.props.Video;
   }
 
   video {
-    width: 90%;
-    padding: 0 auto;
+    width: 80%;
   }
 
   .dropdown {
