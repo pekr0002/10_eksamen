@@ -13,6 +13,11 @@ import Layout from "../layouts/Layout.astro";
       <h1 class="center">Hillerød Bowls Klub</h1>
     </div>
     <img
+      id="lillemandCircle"
+      src="public/lillemandCircle.svg"
+      alt="Lillemand, vores maskot"
+    />
+    <img
       id="heroImageMobile"
       src="public/indexPage/hero.webp"
       alt="Indendørs hal på Kulsvigergården"
@@ -37,8 +42,10 @@ import Layout from "../layouts/Layout.astro";
           Man er velkommen til at kigge forbi efter kontakt med formanden forinden.
           Man skal ikke medbringe andet end sit gode humør.
         </p>
-        <div id="contactButton">
-          <RedButton Text="Kontakt os her" Link="Kontakt" />
+        <div class="ctaContainer">
+          <div id="contactButton">
+            <RedButton Text="Kontakt os her" Link="Kontakt" />
+          </div>
         </div>
       </div>
       <div class="imageContainer">
@@ -62,7 +69,9 @@ import Layout from "../layouts/Layout.astro";
           i en bue. Derfor er bowlen assymetrisk. Du kan læse mere om reglerne
           her.
         </p>
-        <WhiteButton Text="Mere om bowls" Link="OmSpillet" />
+        <div id="mereOmBowlsButton" class="ctaContainer">
+          <WhiteButton Text="Mere om bowls" Link="OmSpillet" />
+        </div>
       </div>
       <div class="imageContainer" id="hvadErBowlsImage">
         <img class="image" src="public/indexPage/gloggPause.webp" alt="..." />
@@ -112,7 +121,8 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .center,
-  #contactButton {
+  #contactButton,
+  #mereOmBowlsButton {
     justify-self: center;
     text-align: center;
   }
@@ -128,14 +138,17 @@ import Layout from "../layouts/Layout.astro";
     justify-self: center;
   }
 
+  #lillemandCircle {
+    display: none;
+  }
+
   #lillemand {
-    width: 40vw;
+    width: 175px;
     height: auto;
     object-fit: cover;
     position: relative;
     top: -100px;
     left: 50px;
-    /* display: none; */
   }
 
   .image {
@@ -160,18 +173,27 @@ import Layout from "../layouts/Layout.astro";
     /* margin-top: -5rem; */
   }
 
+  .ctaContainer {
+    /* justify-self: center; */
+  }
+
   @media (min-width: 800px) {
+    .image {
+      width: 100%;
+      object-fit: cover;
+    }
+
     #heroImageMobile {
       display: none;
     }
 
     #heroImageDesktop {
       display: initial;
-      height: 600px;
-      width: auto;
+      height: 500px;
+      width: 100%;
       object-fit: cover;
       justify-self: center;
-      margin-bottom: -10rem;
+      margin-top: -160px;
     }
 
     #lillemand {
@@ -182,6 +204,14 @@ import Layout from "../layouts/Layout.astro";
       top: -35rem;
       left: 75vw; */
       display: none;
+    }
+
+    #lillemandCircle {
+      display: initial;
+      width: 150px;
+      position: relative;
+      top: -175px;
+      left: 75vw;
     }
 
     #hvorText {
@@ -206,11 +236,6 @@ import Layout from "../layouts/Layout.astro";
       height: 100%;
       overflow: hidden;
       display: flex;
-    }
-
-    .image {
-      width: 100%;
-      object-fit: cover;
     }
 
     #hvadErBowlsImage {
