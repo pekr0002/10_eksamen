@@ -1,0 +1,60 @@
+---
+const Year = Astro.props.Year;
+const Name = Astro.props.Name;
+const Type = Astro.props.Type;
+
+const { product } = Astro.props;
+const Url = `../../public/eventpage/${product.EventImage}.webp`;
+console.log(product);
+---
+
+<li>
+  <article class={product.cup}>
+    <h1>{product.EventName}</h1>
+    <h2>{product.EventDate}</h2>
+    <h3>kl {product.EventTimeStart}-{product.EventTimeEnd}</h3>
+    <p>{product.EventDiscription}</p>
+    <img src={Url} alt="billede blev ikke fundet" />
+  </article>
+</li>
+<style>
+  article {
+    position: relative;
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 5;
+    border-radius: var(--BorderRadiusBig);
+    background-color: var(--White);
+    box-shadow: var(--BoxShadow);
+    margin: 0 auto;
+    max-width: 415px;
+    padding: 25px;
+  }
+
+  article img {
+    margin-top: 10px;
+    height: 100%;
+    border-radius: 0px 0px 23px 23px;
+  }
+
+  li {
+    display: grid;
+  }
+  h2 {
+    text-transform: capitalize;
+    color: var(--Green100);
+    font-size: 1.25rem;
+  }
+  h1 {
+    font-size: 2.5rem;
+    font-family: cabin, sans-serif;
+  }
+
+  p,
+  h2,
+  h3,
+  h1 {
+    padding: 0;
+    margin: 5px;
+  }
+</style>

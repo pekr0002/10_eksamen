@@ -63,7 +63,7 @@ console.log(formatDate(data[0].event_date));
   </div>
   <section id="galleryWinners">
     <h2>"ud fra sortering"</h2>
-    <div class="grid">
+    <div class="responsiveGrid">
       <ul>
         {data.map((product) => <GalleryCard {product} />)}
       </ul>
@@ -133,11 +133,6 @@ console.log(formatDate(data[0].event_date));
     grid-row: 3/4;
   }
   .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    grid-auto-rows: auto;
-    margin: 0 auto;
-    gap: 25px;
     margin: 20px;
   }
 
