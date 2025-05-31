@@ -1,9 +1,12 @@
 ---
-const Link = Astro.props.Link;
+const Cup = Astro.props.Cup;
 const Text = Astro.props.Text;
+const Class = Astro.props.Class;
 ---
 
-<a class="" href={Link}>{Text}</a>
+<a class=`galleryButton ${Class}` href="javascript:void(0)" data-cup={Cup}
+  >{Text}</a
+>
 
 <style>
   a {
@@ -19,11 +22,17 @@ const Text = Astro.props.Text;
     border: 2px solid var(--Black);
     font-weight: 400;
     margin: 10px auto;
+    background-color: var(--OffWhite);
+    color: var(--Black);
   }
 
-  .active,
-  a:hover {
+  .active {
     background-color: var(--Red100);
+    color: var(--White);
+    border: 2px solid var(--Red100);
+  }
+  a:hover {
+    background-color: var(--Black);
     color: var(--White);
     border: 2px solid var(--Red100);
   }
