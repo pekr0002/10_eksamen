@@ -4,6 +4,7 @@ import Footer from "../components/Footer.astro";
 import "../styles/style.css";
 
 const Background = Astro.props.Background;
+const Page = Astro.props.Page;
 ---
 
 <!doctype html>
@@ -30,7 +31,7 @@ const Background = Astro.props.Background;
     />
   </head>
   <body class={Background}>
-    <Header />
+    <Header Page={Page} />
     <main>
       <slot />
     </main>
