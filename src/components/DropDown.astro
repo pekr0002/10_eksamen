@@ -5,7 +5,7 @@ const Title = Astro.props.Title;
 ---
 
 <div class="dropDownContainer" id={Id}>
-  <h3>{Title}</h3>
+  <h2>{Title}</h2>
   <div class="dropDownContent">
     <slot />
   </div>
@@ -13,19 +13,23 @@ const Title = Astro.props.Title;
 
 <style>
   .dropDownContainer {
-    display: grid;
-    grid-template-rows: 50px 1fr;
-    background-color: #003b5c26;
-    border-radius: 20px;
-    padding: 20px;
-    display: grid;
+    background-color: var(--White);
+    box-shadow: var(--BoxShadow);
+    border-radius: var(--BorderRadiusBig);
+    margin: 2rem auto;
+    padding: 1.5rem 1.5rem 1.5rem 2rem;
   }
-  h3 {
-    font-family: GT-Walsheim;
-  }
+
   .dropDownContent {
     padding: 20px 0px;
     display: none;
+    grid-template-columns: 1fr 2fr;
+    gap: 3.5rem;
+    margin: 1rem 0;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    overflow: auto;
   }
   .active {
     display: block;
