@@ -3,6 +3,7 @@ import DropdownLongText from "../components/DropdownLongText.astro";
 import DropdownLongTextMobile from "../components/DropdownLongTextMobile.astro";
 import DropdownVideo from "../components/DropdownVideo.astro";
 import Layout from "../layouts/Layout.astro";
+import DropDown from "../components/DropDown.astro";
 ---
 
 <Layout>
@@ -77,9 +78,18 @@ import Layout from "../layouts/Layout.astro";
     </ul>
   </div>
 
+  <DropDown Type="red" Title="Interview med formanden" Id="interview">
+    <p>se interview med formanden</p>
+    <video controls>
+      <source
+        src="https://fjordtv.b-cdn.net/90_bowlshd1080p23022023071828.movFLASH.mp4"
+        type="video/mp4"
+      />
+    </video>
+  </DropDown>
+
   <div id="interview">
     <DropdownVideo
-      Title="Interview med formanden"
       Paragraph="Se her interviewet med formanden, Michael Wolff Hansen"
       Video="https://fjordtv.b-cdn.net/90_bowlshd1080p23022023071828.movFLASH.mp4"
     />
