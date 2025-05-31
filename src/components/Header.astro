@@ -3,18 +3,20 @@ const Page = Astro.props.Page;
 ---
 
 <header>
+  <!-- <div class="headerContents"> -->
   <!-- Hamburger -->
   <div class="hamburger" id="hamburger">☰</div>
 
   <!-- Mobile -->
   <nav id="mobileMenu" class="hidden">
-    <a href="index.html">Forside</a>
-    <a href="OmSpillet">Om spillet</a>
+    <a href="index.html" class=`${Page==="forside" ? 'active':''}`>Forside</a>
+    <a href="OmSpillet" class=`${Page==="omSpillet" ? 'active':''}`
+      >Om spillet</a
+    >
+    <a href="Galleri" class=`${Page==="gallery" ? 'active':''}`>Galleri</a>
+    <a href="Events" class=`${Page==="events" ? 'active':''}`>Events</a>
 
-    <a href="Galleri" class=`${Page==="gallery" ? 'highlight':''}`>Galleri</a>
-    <a href="Events">Events</a>
-
-    <a href="Kontakt">Spil med os</a>
+    <a href="Kontakt" class=`${Page==="Kontakt" ? 'active':''}`>Spil med os</a>
   </nav>
 
   <!-- Desktop -->
@@ -30,7 +32,6 @@ const Page = Astro.props.Page;
     <img id="logo" src="greenLogo.svg" alt="logo" />
   </a>
   <div class="desktopMenu" id="headerRight">
-
     <a href="Events" class=`${Page==="events" ? 'active':''}`>Events</a>
 
     <div id="button">
@@ -53,25 +54,37 @@ const Page = Astro.props.Page;
     position: sticky;
     top: 0;
     z-index: 1000;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1rem 3rem;
+    text-align: center;
+    align-items: center;
   }
 
   a {
-    text-transform: capitalize;
+    text-transform: uppercase;
   }
+  /* .headerContents {
+    max-width: 1440px;
+    margin: 0 auto;
+  } */
 
   .active {
     color: var(--Red100);
     text-decoration: underline;
   }
+
+  #logoContainer {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+    justify-self: center;
+    display: grid;
+  }
   /* Desktop: */
   @media (min-width: 1000px) {
     header {
       background-color: var(--White);
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      padding: 1rem 3rem;
-      text-align: center;
-      align-items: center;
       border-bottom: 1px solid var(--Black);
     }
 
@@ -125,6 +138,12 @@ const Page = Astro.props.Page;
     }
   }
 
+  @media (min-width: 1600px) {
+    a {
+      font-size: 34px;
+    }
+  }
+
   /* Mobile: */
   @media (max-width: 999px) {
     header {
@@ -161,14 +180,6 @@ const Page = Astro.props.Page;
 
     #mobileMenu.hidden {
       display: none;
-    }
-
-    #logoContainer {
-      grid-column: 2;
-      grid-row: 1;
-      align-self: center;
-      justify-self: center;
-      display: grid;
     }
 
     #logo {
