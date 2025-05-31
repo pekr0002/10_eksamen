@@ -1,6 +1,43 @@
 ---
-import Layout from '../layouts/Layout.astro';
+//@ts-nocheck
+import { late } from "astro:schema";
+import EventCard from "../components/EventCard.astro";
+import SelectButton from "../components/SelectButton.astro";
+import Layout from "../layouts/Layout.astro";
+
+const url = "https://zyxwycthnsawqveghsdr.supabase.co/rest/v1/events";
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp5eHd5Y3RobnNhd3F2ZWdoc2RyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgzNDI1MDcsImV4cCI6MjA2MzkxODUwN30.oKnpJzXhTYqQFPO7ebhUAXa2BuuhEH7Mxzho0VghZeI";
+
+const options = {
+  headers: {
+    apikey: key,
+  },
+};
+
+const data = await fetch(url, options).then((res) => {
+  return res.json();
+});
 ---
 
 <Layout>
+  <h1>EVENTS</h1>
+  <p>
+    Vi spiller hver onsdag, men har også to fester om året: en sommerfest og en
+    julefrokost. Her kan du finde datoer på de opkommende begivenheder klubben
+    holder.
+  </p>
+  <ul class="responsiveGrid">
+    {data.map((event) => <EventCard {event} />)}
+  </ul>
 </Layout>
+
+<style>
+  .responsiveGrid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+  p {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+</style>

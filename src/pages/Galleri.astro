@@ -78,11 +78,13 @@ const formatDate = (dateString) =>
     />
   </div>
   <section id="galleryWinners">
+
     <div class="selector">
       <SelectButton Class="active" Text="Galleri" Cup="galleri" />
       <SelectButton Text="Scoremestre" Cup="scoremester" />
       <SelectButton Text="Klubmestre" Cup="klubmester" />
       <SelectButton Text="Julemestre" Cup="julemester" />
+
     </div>
 
     <div id="galleri" class="galleryTab">
@@ -220,6 +222,7 @@ const formatDate = (dateString) =>
     grid-row: 3/4;
   }
   .grid {
+
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     grid-template-rows: auto auto auto;

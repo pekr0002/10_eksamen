@@ -26,11 +26,13 @@ const Url = `../../public/gallerypage/${product.cup}/${product.cup}${product.yea
     font-family: cabin, sans-serif;
   }
   article {
-    border-radius: 15px;
+    border-radius: var(--BorderRadiusBig);
     display: grid;
     grid-template-rows: subgrid;
+
     grid-row: span 3; /* spans 2 rows of the parent */
     padding: 7px 8px;
+
     gap: 4px;
     background-color: var(--White);
     text-align: center;
@@ -38,9 +40,10 @@ const Url = `../../public/gallerypage/${product.cup}/${product.cup}${product.yea
     overflow: hidden;
   }
   article img {
+    margin-top: 10px;
     aspect-ratio: 233.12/301.71;
     max-width: 233.117px;
-    object-fit: cover;
+    border-radius: 0px 0px 23px 23px;
   }
 
   .newestWinner {
