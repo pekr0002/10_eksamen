@@ -1,8 +1,6 @@
 ---
-import DropdownLongText from "../components/DropdownLongText.astro";
-import DropdownLongTextMobile from "../components/DropdownLongTextMobile.astro";
-import DropdownVideo from "../components/DropdownVideo.astro";
 import Layout from "../layouts/Layout.astro";
+import DropDown from "../components/DropDown.astro";
 ---
 
 <Layout>
@@ -77,33 +75,55 @@ import Layout from "../layouts/Layout.astro";
     </ul>
   </div>
 
-  <div id="interview">
-    <DropdownVideo
-      Title="Interview med formanden"
-      Paragraph="Se her interviewet med formanden, Michael Wolff Hansen"
-      Video="https://fjordtv.b-cdn.net/90_bowlshd1080p23022023071828.movFLASH.mp4"
-    />
-  </div>
+  <DropDown Title="Interview med formanden" Id="interview">
+    <p>se interview med formanden</p>
+    <video controls>
+      <source
+        src="https://fjordtv.b-cdn.net/90_bowlshd1080p23022023071828.movFLASH.mp4"
+        type="video/mp4"
+      />
+    </video>
+  </DropDown>
 
-  <div class="dropdownMobile historie">
-    <DropdownLongTextMobile
-      Title="Historie"
-      Paragraph1="Bowls - eller Lawn Bowls - har rødder i Ægypten for 5.000 år siden, hvorfra det har udviklet sig. I den engelske verden er Bowls et meget udbredt spil. Bowls blev tidligere afviklet som underholdning for adelen på slottenes og herregårdenes tæt klippede græsplæner. Nu spilles det af unge og ældre i enhver engelsk by, også i lande med historisk tilknytning til England."
-      Paragraph2="Året var 1993 da en gruppe af aktive seniorer første gang blev præsenteret for 'Bowls' i Hillerød. Initiativtageren var Mike Pestell, der med sit firma Anglo-bowls håbede på en stor dansk tilslutning og selv havde investeret i det kostbare udstyr. Der blev indgået en aftale om leje af udstyr hos Anglobowls og baneleje i Hillerød Tenniscenter, hvorefter sporten over de næste år langsomt voksede, indtil man i 1996 enedes om at etablere Hillerød Bowlsklub. Hillerød Bowlsklub stiftedes på generalforsamlingen den 7. oktober 1996 og har siden tydeliggjort sig i lokal området, så der hver onsdag kan spilles på ti måtter i Hillerød. Spillet, er især henvendt til seniorer med mulighed for at spille i dagtimerne og således kan mødes med andre i et aktivt fællesskab om såvel spillet som det sociale samvær."
-      Image="public/greenBalls.svg"
-      ImageAlt="Grønne kugler dekoration"
-    />
-  </div>
-
-  <div class="dropdownDesktop historie">
-    <DropdownLongText
-      Title="Historie"
-      Paragraph1="Bowls - eller Lawn Bowls - har rødder i Ægypten for 5.000 år siden, hvorfra det har udviklet sig. I den engelske verden er Bowls et meget udbredt spil. Bowls blev tidligere afviklet som underholdning for adelen på slottenes og herregårdenes tæt klippede græsplæner. Nu spilles det af unge og ældre i enhver engelsk by, også i lande med historisk tilknytning til England."
-      Paragraph2="Året var 1993 da en gruppe af aktive seniorer første gang blev præsenteret for 'Bowls' i Hillerød. Initiativtageren var Mike Pestell, der med sit firma Anglo-bowls håbede på en stor dansk tilslutning og selv havde investeret i det kostbare udstyr. Der blev indgået en aftale om leje af udstyr hos Anglobowls og baneleje i Hillerød Tenniscenter, hvorefter sporten over de næste år langsomt voksede, indtil man i 1996 enedes om at etablere Hillerød Bowlsklub. Hillerød Bowlsklub stiftedes på generalforsamlingen den 7. oktober 1996 og har siden tydeliggjort sig i lokal området, så der hver onsdag kan spilles på ti måtter i Hillerød. Spillet, er især henvendt til seniorer med mulighed for at spille i dagtimerne og således kan mødes med andre i et aktivt fællesskab om såvel spillet som det sociale samvær."
-      Image="public/greenBalls.svg"
-      ImageAlt="Grønne kugler dekoration"
-    />
-  </div>
+  <DropDown Title="Historie" Id="historie">
+    <div class="grid_1-2">
+      <p>
+        Bowls - eller Lawn Bowls - har rødder i Ægypten for 5.000 år siden,
+        hvorfra det har udviklet sig. I den engelske verden er Bowls et meget
+        udbredt spil. Bowls blev tidligere afviklet som underholdning for adelen
+        på slottenes og herregårdenes tæt klippede græsplæner. Nu spilles det af
+        unge og ældre i enhver engelsk by, også i lande med historisk
+        tilknytning til England." Paragraph2="Året var 1993 da en gruppe af
+        aktive seniorer første gang blev præsenteret for 'Bowls' i Hillerød.
+        Initiativtageren var Mike Pestell, der med sit firma Anglo-bowls håbede
+        på en stor dansk tilslutning og selv havde investeret i det kostbare
+        udstyr. Der blev indgået en aftale om leje af udstyr hos Anglobowls og
+        baneleje i Hillerød Tenniscenter, hvorefter sporten over de næste år
+        langsomt voksede, indtil man i 1996 enedes om at etablere Hillerød
+        Bowlsklub. Hillerød Bowlsklub stiftedes på generalforsamlingen den 7.
+        oktober 1996 og har siden tydeliggjort sig i lokal området, så der hver
+        onsdag kan spilles på ti måtter i Hillerød. Spillet, er især henvendt
+        til seniorer med mulighed for at spille i dagtimerne og således kan
+        mødes med andre i et aktivt fællesskab om såvel spillet som det sociale
+        samvær.
+      </p>
+      <p>
+        Året var 1993 da en gruppe af aktive seniorer første gang blev
+        præsenteret for 'Bowls' i Hillerød. Initiativtageren var Mike Pestell,
+        der med sit firma Anglo-bowls håbede på en stor dansk tilslutning og
+        selv havde investeret i det kostbare udstyr. Der blev indgået en aftale
+        om leje af udstyr hos Anglobowls og baneleje i Hillerød Tenniscenter,
+        hvorefter sporten over de næste år langsomt voksede, indtil man i 1996
+        enedes om at etablere Hillerød Bowlsklub. Hillerød Bowlsklub stiftedes
+        på generalforsamlingen den 7. oktober 1996 og har siden tydeliggjort sig
+        i lokal området, så der hver onsdag kan spilles på ti måtter i Hillerød.
+        Spillet, er især henvendt til seniorer med mulighed for at spille i
+        dagtimerne og således kan mødes med andre i et aktivt fællesskab om
+        såvel spillet som det sociale samvær.
+      </p>
+      <img src="public/greenBalls.svg" alt="Grønne kugler dekoration" />
+    </div>
+  </DropDown>
 </Layout>
 
 <style>
@@ -146,6 +166,10 @@ import Layout from "../layouts/Layout.astro";
 
   .dropdownDesktop {
     display: none;
+  }
+
+  video {
+    width: 100%;
   }
   @media (min-width: 800px) {
     #subNavBar {

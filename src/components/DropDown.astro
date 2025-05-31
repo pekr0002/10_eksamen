@@ -1,0 +1,45 @@
+---
+const Type = Astro.props.Type;
+const Id = Astro.props.Id;
+const Title = Astro.props.Title;
+---
+
+<div class="dropDownContainer" id={Id}>
+  <h2>{Title}</h2>
+  <div class="dropDownContent">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .dropDownContainer {
+    background-color: var(--White);
+    box-shadow: var(--BoxShadow);
+    border-radius: var(--BorderRadiusBig);
+    margin: 2rem auto;
+    padding: 1.5rem 1.5rem 1.5rem 2rem;
+  }
+
+  .dropDownContent {
+    padding: 20px 0px;
+    display: none;
+    grid-template-columns: 1fr 2fr;
+    gap: 3.5rem;
+    margin: 1rem 0;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    overflow: auto;
+  }
+  .active {
+    display: block;
+  }
+</style>
+<script define:vars={{ Id }}>
+  document.querySelector("#" + Id).addEventListener("click", toggleDropDown);
+  function toggleDropDown() {
+    document
+      .querySelector("#" + Id + " .dropDownContent")
+      .classList.toggle("active");
+  }
+</script>
