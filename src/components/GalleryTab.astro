@@ -12,8 +12,8 @@ const Title = Astro.props.Title;
     <ul>
       {
         Data.filter((d: any) => d.cup === `${Cup}`).map(
-          (product: any, index: any) => (
-            <GalleryCard product={product} index={index} />
+          (gallery: any, index: any) => (
+            <GalleryCard gallery={gallery} index={index} />
           ),
         )
       }

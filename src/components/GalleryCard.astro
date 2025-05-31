@@ -1,12 +1,12 @@
 ---
-const { product, index } = Astro.props;
-const Url = `../../public/gallerypage/${product.cup}/${product.cup}${product.year}.webp`;
+const { gallery, index } = Astro.props;
+const Url = `../../public/gallerypage/${gallery.cup}/${gallery.cup}${gallery.year}.webp`;
 ---
 
-<li class=`${product.cup} ${index===0 ? 'highlight':''} galleryItem`>
+<li class=`${gallery.cup} ${index===0 ? 'highlight':''} galleryItem`>
   <article>
-    <h3>{product.cup} {product.year}</h3>
-    <h4>{product.name}</h4>
+    <h3>{gallery.cup} {gallery.year}</h3>
+    <h4>{gallery.name}</h4>
     <img src={Url} alt="billede blev ikke fundet" />
     <img class="newestWinner" src="../../public/decorations.svg" alt="" />
   </article>

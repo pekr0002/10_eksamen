@@ -31,10 +31,11 @@ main {
   margin: 0 1rem;
   max-width: 1440px;
   margin: 0 auto;
+}
+
+body {
   background-image: url("public/backgroundCurves/kurve2-mirrored.svg");
-  background-repeat: repeat-y;
   background-position: center;
-  background-size: 80vw;
 }
 
 /* Fonts */
