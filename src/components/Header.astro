@@ -10,8 +10,10 @@ const Page = Astro.props.Page;
   <nav id="mobileMenu" class="hidden">
     <a href="index.html">Forside</a>
     <a href="OmSpillet">Om spillet</a>
+
     <a href="Galleri" class=`${Page==="gallery" ? 'highlight':''}`>Galleri</a>
-    <a href="events">Events</a>
+    <a href="Events">Events</a>
+
     <a href="Kontakt">Spil med os</a>
   </nav>
 
@@ -28,7 +30,9 @@ const Page = Astro.props.Page;
     <img id="logo" src="greenLogo.svg" alt="logo" />
   </a>
   <div class="desktopMenu" id="headerRight">
-    <a href="events" class=`${Page==="events" ? 'active':''}`>Events</a>
+
+    <a href="Events" class=`${Page==="events" ? 'active':''}`>Events</a>
+
     <div id="button">
       <a id="spilMedOs" href="Kontakt">Spil med os</a>
     </div>
