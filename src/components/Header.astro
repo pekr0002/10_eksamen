@@ -1,5 +1,5 @@
 ---
-
+const Page = Astro.props.Page;
 ---
 
 <header>
@@ -10,23 +10,29 @@
   <nav id="mobileMenu" class="hidden">
     <a href="index.html">Forside</a>
     <a href="OmSpillet">Om spillet</a>
-    <a href="Galleri">Galleri</a>
+
+    <a href="Galleri" class=`${Page==="gallery" ? 'highlight':''}`>Galleri</a>
     <a href="Events">Events</a>
+
     <a href="Kontakt">Spil med os</a>
   </nav>
 
   <!-- Desktop -->
   <div id="headerLeft" class="desktopMenu">
-    <a href="index.html">Forside</a>
-    <a href="OmSpillet">Om spillet</a>
-    <a href="Galleri">Galleri</a>
+    <a href="index.html" class=`${Page==="forside" ? 'active':''}`>Forside</a>
+    <a href="OmSpillet" class=`${Page==="omSpillet" ? 'active':''}`
+      >Om spillet</a
+    >
+    <a href="Galleri" class=`${Page==="gallery" ? 'active':''}`>Galleri</a>
   </div>
   <a id="logoContainer" href="
     index.html">
     <img id="logo" src="greenLogo.svg" alt="logo" />
   </a>
   <div class="desktopMenu" id="headerRight">
-    <a href="Events">Events</a>
+
+    <a href="Events" class=`${Page==="events" ? 'active':''}`>Events</a>
+
     <div id="button">
       <a id="spilMedOs" href="Kontakt">Spil med os</a>
     </div>
@@ -46,13 +52,17 @@
   header {
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 1000;
   }
 
   a {
     text-transform: capitalize;
   }
 
+  .active {
+    color: var(--Red100);
+    text-decoration: underline;
+  }
   /* Desktop: */
   @media (min-width: 1000px) {
     header {
@@ -77,14 +87,12 @@
     #headerLeft {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      /* gap: 0.8rem; */
       justify-content: space-evenly;
     }
 
     #headerRight {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      /* gap: 0.8rem; */
       justify-content: space-evenly;
     }
 
@@ -116,6 +124,7 @@
       color: var(--White);
     }
   }
+
   /* Mobile: */
   @media (max-width: 999px) {
     header {
@@ -159,6 +168,7 @@
       grid-row: 1;
       align-self: center;
       justify-self: center;
+      display: grid;
     }
 
     #logo {

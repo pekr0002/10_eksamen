@@ -5,101 +5,94 @@ import GreenButton from "../components/GreenButton.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
-  <header></header>
-
-  <main>
-    <div id="heroText">
-      <h2 class="center" id="velkommenTil">Velkommen til</h2>
-      <h1 class="center">Hillerød Bowls Klub</h1>
-    </div>
-    <img
-      id="lillemandCircle"
-      src="public/lillemandCircle.svg"
-      alt="Lillemand, vores maskot"
-    />
-    <img
-      id="heroImageMobile"
-      src="public/indexPage/hero.webp"
-      alt="Indendørs hal på Kulsvigergården"
-    />
-    <img
-      id="heroImageDesktop"
-      src="public/indexPage/heroWithLillemand.webp"
-      alt="Indendørs hal på Kulsvigergården"
-    />
-    <img
-      id="lillemand"
-      src="public/lillemand.png"
-      alt="Lilemand, vores maskot"
-    />
-    <div class="grid_1-1">
-      <div class="rightAligned">
-        <h2 id="hvorText">Hvor og hvornår</h2>
-        <p>
-          Hver onsdag hygger vi os med spillet og hinandens selskab på
-          Kulsviergården i Alsønderup. Vi spiller fra kl. 11:30 - 13:30. <br
-          /><br />
-          Man er velkommen til at kigge forbi efter kontakt med formanden forinden.
-          Man skal ikke medbringe andet end sit gode humør.
-        </p>
-        <div class="ctaContainer">
-          <div id="contactButton">
-            <RedButton Text="Kontakt os her" Link="Kontakt" />
-          </div>
-        </div>
-      </div>
-      <div class="imageContainer">
-        <img
-          class="image"
-          id="hvorImage"
-          src="public/indexPage/kulsvigergaardenOutside.webp"
-          alt="..."
-        />
-      </div>
-    </div>
-
-    <div class="grid_1-1" id="hvadErBowls">
-      <div id="hvadErBowlsRight">
-        <h2 id="hvadErBowlsH2">Hvad er bowls?</h2>
-        <p>
-          Vi spiller English Short Mat Bowling (ESMB på lange måtter, som vi
-          ruller ud. Målet ved spillet er at rulle sin bowls boldt så at den
-          kommer tættest muligt på den markør, som er på den anden side af
-          banen. Der er dog en bar på banen som gør, at man skal rulle sin bowls
-          i en bue. Derfor er bowlen assymetrisk. Du kan læse mere om reglerne
-          her.
-        </p>
-        <div id="mereOmBowlsButton" class="ctaContainer">
-          <WhiteButton Text="Mere om bowls" Link="OmSpillet" />
-        </div>
-      </div>
-      <div class="imageContainer" id="hvadErBowlsImage">
-        <img class="image" src="public/indexPage/gloggPause.webp" alt="..." />
-      </div>
-    </div>
-
-    <div class="grid_1-1">
-      <h2 id="eventsText">Events og Begivenheder</h2>
-      <div>
-        <p>
-          Vi spiller hver onsdag, men afholder også interne turneringer, såvel
-          som deltager i danske turneringer. Kig her, for at se kalenderen med
-          vores begivenheder.
-        </p>
-        <GreenButton Link="events" Text="klik her" />
-      </div>
+<Layout Background="variant1Mirror" Page="forside">
+  <div id="heroText">
+    <h2 class="center" id="velkommenTil">Velkommen til</h2>
+    <h1 class="center">Hillerød Bowls Klub</h1>
+  </div>
+  <img
+    id="lillemandCircle"
+    src="public/lillemandCircle.svg"
+    alt="Lillemand, vores maskot"
+  />
+  <img
+    id="heroImageMobile"
+    src="public/indexPage/hero.webp"
+    alt="Indendørs hal på Kulsvigergården"
+  />
+  <img
+    id="heroImageDesktop"
+    src="public/indexPage/heroWithLillemand.webp"
+    alt="Indendørs hal på Kulsvigergården"
+  />
+  <img
+    id="lillemand"
+    src="public/lillemand.png"
+    alt="Lillemand, vores maskot"
+  />
+  <div class="grid_1-1">
+    <div class="rightAligned">
+      <h2 id="hvorText">Hvor og hvornår</h2>
       <p>
-        Klubben afholder hvert år to fester. Sommerfesten er en frokost et sted
-        i sommerlandet og julefrokosten afvikles som regel i et festlokale og
-        slutter gerne med en svingom. <br />
-        <br /> Vi har også vores eget blad, De Skøre Kugler, der udkommer ca. femgange
-        omåret. Send os en E-mail og vi sender dig en indmeldelse blanket.
+        Hver onsdag hygger vi os med spillet og hinandens selskab på
+        Kulsviergården i Alsønderup. Vi spiller fra kl. 11:30 - 13:30. <br /><br
+        />
+        Man er velkommen til at kigge forbi efter kontakt med formanden forinden.
+        Man skal ikke medbringe andet end sit gode humør.
       </p>
+      <div class="ctaContainer">
+        <div id="contactButton">
+          <RedButton Text="Kontakt os her" Link="Kontakt" />
+        </div>
+      </div>
     </div>
-  </main>
+    <div class="imageContainer">
+      <img
+        class="image"
+        id="hvorImage"
+        src="public/indexPage/kulsvigergaardenOutside.webp"
+        alt="..."
+      />
+    </div>
+  </div>
 
-  <footer></footer>
+  <div class="grid_1-1" id="hvadErBowls">
+    <div id="hvadErBowlsRight">
+      <h2 id="hvadErBowlsH2">Hvad er bowls?</h2>
+      <p>
+        Vi spiller English Short Mat Bowling (ESMB på lange måtter, som vi
+        ruller ud. Målet ved spillet er at rulle sin bowls boldt så at den
+        kommer tættest muligt på den markør, som er på den anden side af banen.
+        Der er dog en bar på banen som gør, at man skal rulle sin bowls i en
+        bue. Derfor er bowlen assymetrisk. Du kan læse mere om reglerne her.
+      </p>
+      <div id="mereOmBowlsButton" class="ctaContainer">
+        <WhiteButton Text="Mere om bowls" Link="OmSpillet" />
+      </div>
+    </div>
+    <div class="imageContainer" id="hvadErBowlsImage">
+      <img class="image" src="public/indexPage/gloggPause.webp" alt="..." />
+    </div>
+  </div>
+
+  <div class="grid_1-1">
+    <h2 id="eventsText">Events og Begivenheder</h2>
+    <div>
+      <p>
+        Vi spiller hver onsdag, men afholder også interne turneringer, såvel som
+        deltager i danske turneringer. Kig her, for at se kalenderen med vores
+        begivenheder.
+      </p>
+      <GreenButton Link="events" Text="klik her" />
+    </div>
+    <p>
+      Klubben afholder hvert år to fester. Sommerfesten er en frokost et sted i
+      sommerlandet og julefrokosten afvikles som regel i et festlokale og
+      slutter gerne med en svingom. <br />
+      <br /> Vi har også vores eget blad, De Skøre Kugler, der udkommer ca. femgange
+      omåret. Send os en E-mail og vi sender dig en indmeldelse blanket.
+    </p>
+  </div>
 </Layout>
 
 <style>

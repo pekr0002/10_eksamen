@@ -33,12 +33,6 @@ main {
   margin: 0 auto;
 }
 
-body {
-  background-image: url("public/backgroundCurves/kurve2-mirrored.svg");
-  background-position: center;
-  background-repeat: repeat-y;
-}
-
 /* Fonts */
 
 h1 {
