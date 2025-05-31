@@ -18,27 +18,26 @@ const options = {
 const data = await fetch(url, options).then((res) => {
   return res.json();
 });
-
-console.log(data);
-console.log("oirjgwjio");
-
-const formatDate = (dateString) =>
-  new Date(dateString).toLocaleDateString(undefined, {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-console.log(formatDate(data[0].event_date));
 ---
 
 <Layout>
+  <h1>EVENTS</h1>
+  <p>
+    Vi spiller hver onsdag, men har også to fester om året: en sommerfest og en
+    julefrokost. Her kan du finde datoer på de opkommende begivenheder klubben
+    holder.
+  </p>
   <ul class="responsiveGrid">
-    {data.map((product) => <EventCard {product} />)}
+    {data.map((event) => <EventCard {event} />)}
   </ul>
 </Layout>
 
 <style>
   .responsiveGrid {
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+  p {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 </style>
