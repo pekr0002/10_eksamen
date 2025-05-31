@@ -1,0 +1,36 @@
+---
+import GalleryCard from "../components/GalleryCard.astro";
+
+const Data = Astro.props.Data;
+const Cup = Astro.props.Cup;
+const Title = Astro.props.Title;
+---
+
+<div id={Cup} class="galleryTab" style="display:none">
+  <h2>{Title}</h2>
+  <div class="grid">
+    <ul>
+      {
+        Data.filter((d: any) => d.cup === `${Cup}`).map(
+          (product: any, index: any) => (
+            <GalleryCard product={product} index={index} />
+          ),
+        )
+      }
+    </ul>
+  </div>
+</div>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-auto-rows: auto;
+    margin: 0 auto;
+    gap: 25px;
+    margin: 20px;
+  }
+  ul {
+    display: contents;
+  }
+</style>

@@ -13,18 +13,28 @@ import Layout from "../layouts/Layout.astro";
       <h1 class="center">Hillerød Bowls Klub</h1>
     </div>
     <img
-      id="heroImage"
-      src="https://cataas.com/cat"
-      alt="Hillerød Bowls Klub på Kulsvigergården"
+      id="lillemandCircle"
+      src="public/lillemandCircle.svg"
+      alt="Lillemand, vores maskot"
+    />
+    <img
+      id="heroImageMobile"
+      src="public/indexPage/hero.webp"
+      alt="Indendørs hal på Kulsvigergården"
+    />
+    <img
+      id="heroImageDesktop"
+      src="public/indexPage/heroWithLillemand.webp"
+      alt="Indendørs hal på Kulsvigergården"
     />
     <img
       id="lillemand"
-      src="https://cataas.com/cat"
+      src="public/lillemand.png"
       alt="Lilemand, vores maskot"
     />
     <div class="grid_1-1">
       <div class="rightAligned">
-        <h2>Hvor og hvornår</h2>
+        <h2 id="hvorText">Hvor og hvornår</h2>
         <p>
           Hver onsdag hygger vi os med spillet og hinandens selskab på
           Kulsviergården i Alsønderup. Vi spiller fra kl. 11:30 - 13:30. <br
@@ -32,12 +42,19 @@ import Layout from "../layouts/Layout.astro";
           Man er velkommen til at kigge forbi efter kontakt med formanden forinden.
           Man skal ikke medbringe andet end sit gode humør.
         </p>
-        <div id="contactButton">
-          <RedButton Text="Kontakt os her" Link="Kontakt" />
+        <div class="ctaContainer">
+          <div id="contactButton">
+            <RedButton Text="Kontakt os her" Link="Kontakt" />
+          </div>
         </div>
       </div>
       <div class="imageContainer">
-        <img class="image" src="https://cataas.com/cat" alt="..." />
+        <img
+          class="image"
+          id="hvorImage"
+          src="public/indexPage/kulsvigergaardenOutside.webp"
+          alt="..."
+        />
       </div>
     </div>
 
@@ -52,11 +69,12 @@ import Layout from "../layouts/Layout.astro";
           i en bue. Derfor er bowlen assymetrisk. Du kan læse mere om reglerne
           her.
         </p>
-        <!-- WhiteButton, Mere om bowls -->
-        <WhiteButton Text="Mere om bowls" Link="OmSpillet" />
+        <div id="mereOmBowlsButton" class="ctaContainer">
+          <WhiteButton Text="Mere om bowls" Link="OmSpillet" />
+        </div>
       </div>
       <div class="imageContainer" id="hvadErBowlsImage">
-        <img class="image" src="https://cataas.com/cat" alt="..." />
+        <img class="image" src="public/indexPage/gloggPause.webp" alt="..." />
       </div>
     </div>
 
@@ -98,30 +116,49 @@ import Layout from "../layouts/Layout.astro";
     padding: 2rem 0 2.8rem 0;
   }
 
+  #hvorText {
+    margin-top: -100px;
+  }
+
   .center,
-  #contactButton {
+  #contactButton,
+  #mereOmBowlsButton {
     justify-self: center;
     text-align: center;
   }
 
-  #heroImage {
+  #heroImageDesktop {
+    display: none;
+  }
+
+  #heroImageMobile {
     width: 100vw;
-    height: 18rem;
+    height: 250px;
     object-fit: cover;
     justify-self: center;
   }
 
+  #lillemandCircle {
+    display: none;
+  }
+
   #lillemand {
-    height: 10rem;
-    width: 10rem;
+    width: 175px;
+    height: auto;
     object-fit: cover;
     position: relative;
-    top: -5rem;
+    top: -100px;
+    left: 50px;
   }
 
   .image {
     border-radius: var(--BorderRadiusBig);
-    padding: 1rem 0;
+    margin: 1rem 0;
+  }
+
+  #hvorImage {
+    margin: 1rem;
+    /* width: 90vw; */
   }
 
   #hvadErBowls {
@@ -129,29 +166,56 @@ import Layout from "../layouts/Layout.astro";
     border-radius: var(--BorderRadiusBig);
     padding: 1rem 1.8rem;
     box-shadow: var(--BoxShadow);
-    margin-bottom: 1rem;
+    margin: 1rem;
   }
 
   .grid_1-1 {
-    margin-top: -5rem;
+    /* margin-top: -5rem; */
+  }
+
+  .ctaContainer {
+    /* justify-self: center; */
   }
 
   @media (min-width: 800px) {
-    #heroImage {
-      width: 100vw;
-      height: 38rem;
+    .image {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    #heroImageMobile {
+      display: none;
+    }
+
+    #heroImageDesktop {
+      display: initial;
+      height: 500px;
+      width: 100%;
       object-fit: cover;
       justify-self: center;
-      margin-bottom: -10rem;
+      margin-top: -160px;
     }
 
     #lillemand {
-      height: 10rem;
+      /* height: 10rem;
       width: 10rem;
       object-fit: cover;
       position: relative;
       top: -35rem;
+      left: 75vw; */
+      display: none;
+    }
+
+    #lillemandCircle {
+      display: initial;
+      width: 150px;
+      position: relative;
+      top: -175px;
       left: 75vw;
+    }
+
+    #hvorText {
+      margin-top: 0px;
     }
 
     .grid_1-1 {
@@ -168,15 +232,18 @@ import Layout from "../layouts/Layout.astro";
       justify-self: end;
     }
 
+    #hvorImage {
+      margin: 1rem 0;
+    }
+
+    #mereOmBowlsButton {
+      justify-self: start;
+    }
+
     .imageContainer {
       height: 100%;
       overflow: hidden;
       display: flex;
-    }
-
-    .image {
-      width: 100%;
-      object-fit: cover;
     }
 
     #hvadErBowlsImage {

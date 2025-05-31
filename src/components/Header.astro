@@ -26,8 +26,10 @@
     <img id="logo" src="greenLogo.svg" alt="logo" />
   </a>
   <div class="desktopMenu" id="headerRight">
+
     <a href="events">Events</a>
     <a id="spilMedOs" href="Kontakt">Spil med os</a>
+
   </div>
 </header>
 
@@ -44,8 +46,13 @@
   header {
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 2;
   }
+
+  a {
+    text-transform: capitalize;
+  }
+
   /* Desktop: */
   @media (min-width: 1000px) {
     header {
@@ -70,13 +77,15 @@
     #headerLeft {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 0.8rem;
+      /* gap: 0.8rem; */
+      justify-content: space-evenly;
     }
 
     #headerRight {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 0.8rem;
+      /* gap: 0.8rem; */
+      justify-content: space-evenly;
     }
 
     img {
@@ -87,14 +96,24 @@
 
     a {
       font-size: 2.2vw;
+      justify-content: center;
+      align-items: center;
     }
 
     #spilMedOs {
-      background-color: var(--Red100);
       color: var(--White);
       font-weight: 400;
-      padding: 0.5rem 1.5rem;
+    }
+
+    #button {
+      background-color: var(--Red100);
       border-radius: var(--BorderRadiusBig);
+      padding: 0.35rem 1.5rem;
+    }
+    #button:hover {
+      background-color: var(--Green100);
+      border-radius: var(--BorderRadiusBig);
+      color: var(--White);
     }
   }
   /* Mobile: */
