@@ -15,17 +15,21 @@ const Text = Astro.props.Text;
     background-image: url(../../public/greenButton.svg);
     width: 285px;
     height: 146px;
-    display: block;
     display: grid;
+    justify-content: center;
+    align-items: center;
   }
   .ball {
     width: 42px;
     height: 42px;
     position: relative;
     top: 150%;
-    left: 30%;
+    left: 0%;
   }
-  /* 2. Bouncing */
+
+  a:hover p {
+    color: var(--Red100);
+  }
   a:hover .ball {
     animation-name: bouncing_kf;
     animation-duration: 0.2s;
@@ -37,10 +41,17 @@ const Text = Astro.props.Text;
     0% {
     }
     100% {
-      translate: 200%;
+      translate: 220%;
     }
   }
   p {
-    align-self: center;
+    z-index: 2;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.7rem;
+    color: var(--Black);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    top: -30%;
   }
 </style>
