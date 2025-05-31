@@ -1,9 +1,46 @@
 ---
 const Link = Astro.props.Link;
 const Text = Astro.props.Text;
-
 ---
 
-<a href={Link}>{Text}</a>
+<a href={Link}>
+  <img class="ball" src="../../public/greenButtonBall.svg" alt="" />
+  <p>
+    {Text}
+  </p>
+</a>
 
-  <style></style>
+<style>
+  a {
+    background-image: url(../../public/greenButton.svg);
+    width: 285px;
+    height: 146px;
+    display: block;
+    display: grid;
+  }
+  .ball {
+    width: 42px;
+    height: 42px;
+    position: relative;
+    top: 150%;
+    left: 30%;
+  }
+  /* 2. Bouncing */
+  a:hover .ball {
+    animation-name: bouncing_kf;
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+  }
+  @keyframes bouncing_kf {
+    0% {
+    }
+    100% {
+      translate: 200%;
+    }
+  }
+  p {
+    align-self: center;
+  }
+</style>

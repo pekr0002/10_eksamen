@@ -18,13 +18,6 @@ const options = {
 const data = await fetch(baseUrl + "?order=year.desc", options).then((res) => {
   return res.json();
 });
-
-const formatDate = (dateString) =>
-  new Date(dateString).toLocaleDateString(undefined, {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
 ---
 
 <Layout>
@@ -78,13 +71,11 @@ const formatDate = (dateString) =>
     />
   </div>
   <section id="galleryWinners">
-
     <div class="selector">
       <SelectButton Class="active" Text="Galleri" Cup="galleri" />
       <SelectButton Text="Scoremestre" Cup="scoremester" />
       <SelectButton Text="Klubmestre" Cup="klubmester" />
       <SelectButton Text="Julemestre" Cup="julemester" />
-
     </div>
 
     <div id="galleri" class="galleryTab">
@@ -144,54 +135,7 @@ const formatDate = (dateString) =>
     </div>
     <GalleryTab Data={data} Title="Klubmestre" Cup="klubmester" />
     <GalleryTab Data={data} Title="Scoremestre" Cup="scoremester" />
-
     <GalleryTab Data={data} Title="Julemestre" Cup="julemester" />
-
-    <!--     
-    <div id="scoremester" class="galleryTab" style="display:none">
-      <h2>Scoremestre</h2>
-      <div class="grid">
-        <ul>
-          {
-            data
-              .filter((d) => d.cup === "scoremester")
-              .map((product, index) => (
-                <GalleryCard product={product} index={index} />
-              ))
-          }
-        </ul>
-      </div>
-    </div>
-
-    <div id="klubmester" class="galleryTab" style="display:none">
-      <h2>Klubmestre</h2>
-      <div class="grid">
-        <ul>
-          {
-            data
-              .filter((d) => d.cup === "klubmester")
-              .map((product, index) => (
-                <GalleryCard product={product} index={index} />
-              ))
-          }
-        </ul>
-      </div>
-    </div>
-
-    <div id="julemester" class="galleryTab" style="display:none">
-      <h2>Julemestre</h2>
-      <div class="grid">
-        <ul>
-          {
-            data
-              .filter((d) => d.cup === "julemester")
-              .map((product, index) => (
-                <GalleryCard product={product} index={index} />
-              ))
-          }
-        </ul>
-      </div>
-    </div> -->
   </section>
 </Layout>
 <style>
@@ -222,7 +166,6 @@ const formatDate = (dateString) =>
     grid-row: 3/4;
   }
   .grid {
-
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     grid-template-rows: auto auto auto;
