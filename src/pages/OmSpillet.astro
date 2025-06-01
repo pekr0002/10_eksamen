@@ -12,11 +12,7 @@ import DropDown from "../components/DropDown.astro";
     <a href="">Sponsorere</a>
   </div>
   <h1>Om spillet</h1>
-  <img
-    id="lillemand"
-    src="public/lillemand.png"
-    alt="Lillemand, vores maskot"
-  />
+  <img id="lillemand" src="/lillemand.png" alt="Lillemand, vores maskot" />
   <h2 id="hvordanText">Hvordan spiller man?</h2>
   <div class="grid_2-1">
     <p id="hvordanSpillerManText">
@@ -49,7 +45,7 @@ import DropDown from "../components/DropDown.astro";
     </div>
     <img
       id="illustration"
-      src="public/omSpilletPage/bane.svg"
+      src="/omSpilletPage/bane.svg"
       alt="Hillerød Bowls Klub på Kulsvigergården"
     />
   </div>
@@ -76,7 +72,7 @@ import DropDown from "../components/DropDown.astro";
   </div>
 
   <DropDown Title="Interview med formanden" Id="interview">
-    <p>se interview med formanden</p>
+    <p>Se interview med formanden</p>
     <video controls>
       <source
         src="https://fjordtv.b-cdn.net/90_bowlshd1080p23022023071828.movFLASH.mp4"
@@ -160,6 +156,8 @@ import DropDown from "../components/DropDown.astro";
       background-color: var(--White);
       padding: 0.5rem;
       border-bottom: 1px solid var(--Black);
+      border-left: 1px solid var(--Black);
+      border-right: 1px solid var(--Black);
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
@@ -171,11 +169,11 @@ import DropDown from "../components/DropDown.astro";
     }
 
     #lillemand {
-      display: initial;
+      display: block;
       width: 10vw;
-      position: relative;
-      left: 80%;
-      top: -85px;
+      position: absolute;
+      left: 77vw;
+      top: 212px;
       transform: scaleX(-1);
     }
 
