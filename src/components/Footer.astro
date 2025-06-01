@@ -4,14 +4,16 @@ import WhiteButton from "./WhiteButton.astro";
 
 <footer>
   <div class="footerContent">
+    <!-- left column -->
     <div id="logoAndButton">
       <a href="/index.html">
-        <img id="logo" src="/whiteLogo.svg" alt="Logo" />
+        <img id="logo" src="/whiteLogo.svg" alt="Logo" draggable="false" />
       </a>
       <div class="button">
         <WhiteButton Text="Kontakt os" Link="/Kontakt" />
       </div>
     </div>
+    <!-- middle column -->
     <div id="gridColumn2">
       <h3>Adresse</h3>
       <ul id="ulAddress">
@@ -25,6 +27,7 @@ import WhiteButton from "./WhiteButton.astro";
         <li>Mail: bec3400@gmail.com</li>
       </ul>
     </div>
+    <!-- right column -->
     <div id="gridColumn3">
       <h3>Formand</h3>
       <ul>
@@ -38,6 +41,8 @@ import WhiteButton from "./WhiteButton.astro";
           id="instagramLogo"
           src="/kontaktPage/instagram.svg"
           alt="instagram"
+          draggable="false"
+          “
         />
         <a id="instagramText" href=""><p>Instagram</p></a>
       </div>
@@ -95,7 +100,7 @@ import WhiteButton from "./WhiteButton.astro";
   #socialeMedierText {
     padding-bottom: 0;
   }
-
+  /* computer view */
   @media (min-width: 1101px) {
     .footerContent {
       display: grid;

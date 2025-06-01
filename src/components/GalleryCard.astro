@@ -1,8 +1,11 @@
 ---
+// astro props
 const { gallery, index } = Astro.props;
+// const for image url
 const Url = `/gallerypage/${gallery.cup}/${gallery.cup}${gallery.year}.webp`;
 ---
 
+<!-- recive data(gallery) from api-->
 <li class=`${gallery.cup} ${index===0 ? 'highlight':''} galleryItem`>
   <article>
     <h3>{gallery.cup} {gallery.year}</h3>
@@ -33,10 +36,8 @@ const Url = `/gallerypage/${gallery.cup}/${gallery.cup}${gallery.year}.webp`;
     border-radius: var(--BorderRadiusBig);
     display: grid;
     grid-template-rows: subgrid;
-
-    grid-row: span 3; /* spans 2 rows of the parent */
+    grid-row: span 3;
     padding: 7px 8px;
-
     gap: 4px;
     background-color: var(--White);
     text-align: center;
@@ -53,6 +54,7 @@ const Url = `/gallerypage/${gallery.cup}/${gallery.cup}${gallery.year}.webp`;
   .newestWinner {
     display: none;
   }
+  /* computerview */
   @media (min-width: 1075px) {
     .highlight {
       grid-column: 1/3;

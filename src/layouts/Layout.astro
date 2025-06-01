@@ -32,10 +32,11 @@ const Title = Astro.props.Title;
     />
   </head>
   <body class={Background}>
+    <!-- header component -->
     <Header Page={Page} />
-
+    <!-- all pages get in here -->
     <slot />
-
+    <!-- footer component -->
     <Footer />
   </body>
 </html>

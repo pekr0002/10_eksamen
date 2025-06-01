@@ -6,7 +6,12 @@ const Title = Astro.props.Title;
 <div class="dropDownContainer" id={Id}>
   <div id="dropDownTop">
     <h2>{Title}</h2>
-    <img class="arrow" src="/dropDownArrow.svg" alt="arrow icon" />
+    <img
+      class="arrow"
+      src="/dropDownArrow.svg"
+      alt="arrow icon"
+      draggable="false"
+    />
   </div>
   <div class="dropDownContent">
     <slot />
@@ -14,6 +19,13 @@ const Title = Astro.props.Title;
 </div>
 
 <style>
+  .dropDownContainer {
+    background-color: var(--White);
+    box-shadow: var(--BoxShadow);
+    border-radius: var(--BorderRadiusBig);
+    margin: 2rem auto;
+    padding: 1.5rem 1.5rem 1.5rem 2rem;
+  }
   #dropDownTop {
     display: grid;
     grid-template-columns: auto auto;
@@ -25,18 +37,7 @@ const Title = Astro.props.Title;
     margin: auto 1rem;
     transition: transform 0.3s ease;
   }
-  .rotated {
-    transform: rotate(180deg);
-  }
-
-  .dropDownContainer {
-    background-color: var(--White);
-    box-shadow: var(--BoxShadow);
-    border-radius: var(--BorderRadiusBig);
-    margin: 2rem auto;
-    padding: 1.5rem 1.5rem 1.5rem 2rem;
-  }
-
+  /* dropdown content */
   .dropDownContent {
     padding: 20px 0px;
     display: none;
@@ -50,6 +51,9 @@ const Title = Astro.props.Title;
   }
   .active {
     display: block;
+  }
+  .rotated {
+    transform: rotate(180deg);
   }
 </style>
 <script define:vars={{ Id }}>

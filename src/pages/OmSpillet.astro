@@ -48,6 +48,7 @@ import DropDown from "../components/DropDown.astro";
         id="illustration"
         src="/omSpilletPage/bane.svg"
         alt="Hillerød Bowls Klub på Kulsvigergården"
+        draggable="false"
       />
     </div>
     <h2 id="regeler">Regler</h2>
@@ -71,6 +72,7 @@ import DropDown from "../components/DropDown.astro";
         <li>Bowls er ude hvis de rammer blokken eller går i grøften</li>
       </ul>
     </div>
+
 
     <div id="interview">
       <DropDown Title="Interview med formanden" Id="interview">
@@ -124,7 +126,6 @@ import DropDown from "../components/DropDown.astro";
     border-bottom: 1px solid var(--Black);
     display: flex;
     flex-direction: column;
-    /* position: sticky; */
     top: 0;
     z-index: 999;
   }
@@ -133,7 +134,7 @@ import DropDown from "../components/DropDown.astro";
   #regeler,
   #interview,
   #historie {
-    scroll-margin-top: 7rem; /* offset by height of the sticky header*/
+    scroll-margin-top: 7rem; 
   }
 
   #subNavBar a {
@@ -193,10 +194,6 @@ import DropDown from "../components/DropDown.astro";
       top: 212px;
       transform: scaleX(-1);
     }
-
-    /* #hvordanText {
-      margin-top: -14vw;
-    } */
 
     ul {
       margin: 0;
