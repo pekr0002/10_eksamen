@@ -5,6 +5,7 @@ import GalleryTab from "../components/GalleryTab.astro";
 import SelectButton from "../components/SelectButton.astro";
 import Layout from "../layouts/Layout.astro";
 
+// url and key to supabase/database
 const baseUrl = "https://zyxwycthnsawqveghsdr.supabase.co/rest/v1/galleri";
 const key =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp5eHd5Y3RobnNhd3F2ZWdoc2RyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgzNDI1MDcsImV4cCI6MjA2MzkxODUwN30.oKnpJzXhTYqQFPO7ebhUAXa2BuuhEH7Mxzho0VghZeI";
@@ -14,13 +15,14 @@ const options = {
     apikey: key,
   },
 };
-
+// fetch data from api
 const data = await fetch(baseUrl + "?order=year.desc", options).then((res) => {
   return res.json();
 });
 ---
 
 <Layout Background="variant2Mirror" Page="gallery" Title="Galleri">
+  <!-- FARMAND HJÆLP -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".selector a").forEach(function (el: any) {
@@ -53,28 +55,37 @@ const data = await fetch(baseUrl + "?order=year.desc", options).then((res) => {
         src="/gallerypage/moodPicture1.webp"
         alt="Formanden før et kast"
         id="picture1"
+        draggable="false"
       />
       <img
         src="/gallerypage/moodPicture2.webp"
         alt="billede fra oven af kuglerne"
         id="picture2"
+        draggable="false"
       />
       <img
         src="/gallerypage/moodPicture3.webp"
         alt="billede af området"
         id="picture3"
+        draggable="false"
       />
       <img
         src="/gallerypage/moodPicture4.webp"
         alt="Billede fra pauserummet"
         id="picture4"
+        draggable="false"
       />
     </div>
     <section id="galleryWinners">
+      <!-- tab selectors -->
       <div class="selector">
+        <!-- "galleri" tab -->
         <SelectButton Class="active" Text="Galleri" Cup="galleri" />
+        <!-- "scoremester" tab -->
         <SelectButton Text="Scoremestre" Cup="scoremester" />
+        <!-- "klubmester" tab -->
         <SelectButton Text="Klubmestre" Cup="klubmester" />
+        <!-- "julemester" tab -->
         <SelectButton Text="Julemestre" Cup="julemester" />
       </div>
 
@@ -86,55 +97,67 @@ const data = await fetch(baseUrl + "?order=year.desc", options).then((res) => {
               <img
                 src="/gallerypage/galleri/galleryPicture1.webp"
                 alt="Billedet blev ikke indlæst"
+                draggable="false"
               />
             </li>
             <li>
               <img
                 src="/gallerypage/galleri/galleryPicture2.webp"
                 alt="Billedet blev ikke indlæst"
+                draggable="false"
               />
             </li>
             <li>
               <img
                 src="/gallerypage/galleri/galleryPicture3.webp"
                 alt="Billedet blev ikke indlæst"
+                draggable="false"
               />
             </li>
             <li>
               <img
                 src="/gallerypage/galleri/galleryPicture4.webp"
                 alt="Billedet blev ikke indlæst"
+                draggable="false"
               />
             </li>
             <li>
               <img
                 src="/gallerypage/galleri/galleryPicture5.webp"
                 alt="Billedet blev ikke indlæst"
+                draggable="false"
               />
             </li>
             <li>
               <img
                 src="/gallerypage/galleri/galleryPicture6.webp"
                 alt="Billedet blev ikke indlæst"
+                draggable="false"
               />
             </li>
             <li>
               <img
                 src="/gallerypage/galleri/galleryPicture7.webp"
                 alt="Billedet blev ikke indlæst"
+                draggable="false"
               />
             </li>
             <li>
               <img
                 src="/gallerypage/galleri/galleryPicture8.webp"
                 alt="Billedet blev ikke indlæst"
+                draggable="false"
               />
             </li>
           </ul>
         </div>
       </div>
+
+      <!-- "scoremester" tab -->
       <GalleryTab Data={data} Title="Klubmestre" Cup="klubmester" />
+      <!-- "klubmester" tab -->
       <GalleryTab Data={data} Title="Scoremestre" Cup="scoremester" />
+      <!-- "julemester" tab -->
       <GalleryTab Data={data} Title="Julemestre" Cup="julemester" />
     </section>
   </main>

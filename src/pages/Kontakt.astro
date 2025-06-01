@@ -14,14 +14,19 @@ import Layout from "../layouts/Layout.astro";
         <br />
         Vi håber at se dig når vi spiller hver onsdag. <br /> Med venlig hilsen bestyrelsen.
       </p>
-      <img id="lillemand" src="/lillemand.png" alt="Lillemand, vores maskot" />
+      <img
+        id="lillemand"
+        src="/lillemand.png"
+        alt="Lillemand, vores maskot"
+        draggable="false"
+      />
     </div>
     <div class="grid_2-3">
       <h2>Skriv til os</h2>
       <div class="contactFormular">
         <form action="action_page.php">
           <p class="label">Navn</p>
-          <!-- <label for="name">Navn</label> -->
+
           <input
             type="text"
             id="name"
@@ -30,7 +35,6 @@ import Layout from "../layouts/Layout.astro";
             required
           />
           <p class="label">E-mail</p>
-          <!-- <label for="email">E-mail</label> -->
           <input
             type="text"
             id="email"
@@ -39,7 +43,6 @@ import Layout from "../layouts/Layout.astro";
             required
           />
           <p class="label">Besked</p>
-          <!-- <label for="message">Besked</label> -->
           <textarea
             id="message"
             name="message"
@@ -54,12 +57,22 @@ import Layout from "../layouts/Layout.astro";
       <div class="contactInfo">
         <h3>Adresse</h3>
         <div class="grid_icons">
-          <img class="icons" src="/kontaktPage/location.svg" alt="lokation" />
+          <img
+            class="icons"
+            src="/kontaktPage/location.svg"
+            alt="lokation"
+            draggable="false"
+          />
           <p>Pibe Møllevej 7, 3400 Hillerød</p>
         </div>
         <h3>Sociale Medier</h3>
         <div class="grid_icons">
-          <img class="icons" src="/kontaktPage/instagram.svg" alt="instagram" />
+          <img
+            class="icons"
+            src="/kontaktPage/instagram.svg"
+            alt="instagram"
+            draggable="false"
+          />
           <p>Instagram</p>
         </div>
         <h2>Formand</h2>
@@ -70,12 +83,18 @@ import Layout from "../layouts/Layout.astro";
             class="icons"
             src="/kontaktPage/call-calling.svg"
             alt="telefon"
+            draggable="false"
           />
           <p>71 78 50 40</p>
         </div>
         <h3>Formand e-mail</h3>
         <div class="grid_icons">
-          <img class="icons" src="/kontaktPage/mail.svg" alt="e-mail" />
+          <img
+            class="icons"
+            src="/kontaktPage/mail.svg"
+            alt="e-mail"
+            draggable="false"
+          />
           <p>michael.wolff@hotmail.com</p>
         </div>
       </div>
