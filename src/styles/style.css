@@ -90,8 +90,10 @@ li {
 .variant1Mirror,
 .variant2,
 .variant2Mirror {
-  background-position: center;
   background-repeat: repeat-y;
+  background-size: cover;
+  height: 100%;
+  aspect-ratio: initial;
 }
 .variant1 {
   background-image: url("/backgroundCurves/kurve1.svg");
