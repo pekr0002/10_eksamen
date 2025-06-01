@@ -9,33 +9,33 @@ const Page = Astro.props.Page;
 
   <!-- Mobile -->
   <nav id="mobileMenu" class="hidden">
-    <a href="index.html" class=`${Page==="forside" ? 'active':''}`>Forside</a>
-    <a href="OmSpillet" class=`${Page==="omSpillet" ? 'active':''}`
+    <a href="/index.html" class=`${Page==="forside" ? 'active':''}`>Forside</a>
+    <a href="/OmSpillet" class=`${Page==="omSpillet" ? 'active':''}`
       >Om spillet</a
     >
-    <a href="Galleri" class=`${Page==="gallery" ? 'active':''}`>Galleri</a>
-    <a href="Events" class=`${Page==="events" ? 'active':''}`>Events</a>
+    <a href="/Galleri" class=`${Page==="gallery" ? 'active':''}`>Galleri</a>
+    <a href="/Events" class=`${Page==="events" ? 'active':''}`>Events</a>
 
-    <a href="Kontakt" class=`${Page==="Kontakt" ? 'active':''}`>Spil med os</a>
+    <a href="/Kontakt" class=`${Page==="Kontakt" ? 'active':''}`>Spil med os</a>
   </nav>
 
   <!-- Desktop -->
   <div id="headerLeft" class="desktopMenu">
-    <a href="index.html" class=`${Page==="forside" ? 'active':''}`>Forside</a>
-    <a href="OmSpillet" class=`${Page==="omSpillet" ? 'active':''}`
+    <a href="/index.html" class=`${Page==="forside" ? 'active':''}`>Forside</a>
+    <a href="/OmSpillet" class=`${Page==="omSpillet" ? 'active':''}`
       >Om spillet</a
     >
-    <a href="Galleri" class=`${Page==="gallery" ? 'active':''}`>Galleri</a>
+    <a href="/Galleri" class=`${Page==="gallery" ? 'active':''}`>Galleri</a>
   </div>
   <a id="logoContainer" href="
-    index.html">
+    /index.html">
     <img id="logo" src="greenLogo.svg" alt="logo" />
   </a>
   <div class="desktopMenu" id="headerRight">
-    <a href="Events" class=`${Page==="events" ? 'active':''}`>Events</a>
+    <a href="/Events" class=`${Page==="events" ? 'active':''}`>Events</a>
 
     <div id="button">
-      <a id="spilMedOs" href="Kontakt">Spil med os</a>
+      <a id="spilMedOs" href="/Kontakt">Spil med os</a>
     </div>
   </div>
 </header>
@@ -68,6 +68,9 @@ const Page = Astro.props.Page;
     max-width: 1440px;
     margin: 0 auto;
   } */
+  a:hover {
+    color: var(--Red100);
+  }
 
   .active {
     color: var(--Red100);
