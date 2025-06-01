@@ -6,7 +6,7 @@ import WhiteButton from "./WhiteButton.astro";
   <div class="footerContent">
     <div id="logoAndButton">
       <a href="/index.html">
-        <img id="logo" src="/whiteLogo.svg" alt="Logo" />
+        <img id="logo" src="/whiteLogo.svg" alt="Logo" draggable="false" “ />
       </a>
       <div class="button">
         <WhiteButton Text="Kontakt os" Link="/Kontakt" />
@@ -38,6 +38,8 @@ import WhiteButton from "./WhiteButton.astro";
           id="instagramLogo"
           src="/kontaktPage/instagram.svg"
           alt="instagram"
+          draggable="false"
+          “
         />
         <a id="instagramText" href=""><p>Instagram</p></a>
       </div>
@@ -95,7 +97,7 @@ import WhiteButton from "./WhiteButton.astro";
   #socialeMedierText {
     padding-bottom: 0;
   }
-
+  /* computer view */
   @media (min-width: 1101px) {
     .footerContent {
       display: grid;
