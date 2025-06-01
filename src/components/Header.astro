@@ -31,8 +31,7 @@ const Page = Astro.props.Page;
       >
       <a href="/Galleri" class=`${Page==="gallery" ? 'active':''}`>Galleri</a>
     </div>
-    <a id="logoContainer" href="
-    /index.html">
+    <a id="logoContainer" href="/index.html">
       <img id="logo" src="/greenLogo.svg" alt="logo" />
     </a>
     <div class="desktopMenu" id="headerRight">
@@ -126,6 +125,7 @@ const Page = Astro.props.Page;
         font-size: 2.2vw;
         justify-content: center;
         align-items: center;
+        align-self: center;
       }
 
       #spilMedOs {
