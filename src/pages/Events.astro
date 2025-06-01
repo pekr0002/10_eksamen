@@ -36,8 +36,10 @@ const data = await fetch(url, options).then((res) => {
   .responsiveGrid {
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   }
-  p {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  @media (min-width: 800px) {
+    p {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
   }
 </style>
