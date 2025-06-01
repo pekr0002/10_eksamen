@@ -25,7 +25,6 @@ const Title = Astro.props.Title;
     margin: auto 1rem;
     transition: transform 0.3s ease;
   }
-
   .rotated {
     transform: rotate(180deg);
   }
@@ -59,9 +58,6 @@ const Title = Astro.props.Title;
     document
       .querySelector("#" + Id + " .dropDownContent")
       .classList.toggle("active");
-  }
-  // HER PENNY!!!
-  function rotateArrow() {
-    document.querySelector(".arrow").classList.toggle("rotated");
+    document.querySelector("#" + Id + " .arrow").classList.toggle("rotated");
   }
 </script>
