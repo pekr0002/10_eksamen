@@ -8,7 +8,7 @@ import DropDown from "../components/DropDown.astro";
     <a href="#hvordanText">Hvordan spiller man?</a>
     <a href="#regeler">Regler</a>
     <a href="#interview">Interview med formanden</a>
-    <a href="#interview">Historie</a>
+    <a href="#historie">Historie</a>
   </section>
   <main>
     <h1>Om spillet</h1>
@@ -72,49 +72,50 @@ import DropDown from "../components/DropDown.astro";
         <li>Bowls er ude hvis de rammer blokken eller går i grøften</li>
       </ul>
     </div>
-    <!-- drop down element -->
-    <DropDown Title="Interview med formanden" Id="interview">
-      <p>Se interview med formanden</p>
-      <video controls>
-        <source
-          src="https://fjordtv.b-cdn.net/90_bowlshd1080p23022023071828.movFLASH.mp4"
-          type="video/mp4"
-          draggable="false"
-        />
-      </video>
-    </DropDown>
-    <!-- drop down element -->
-    <DropDown Title="Historie" Id="historie">
-      <div class="grid_1-2">
-        <p>
-          Bowls - eller Lawn Bowls - har rødder i Ægypten for 5.000 år siden,
-          hvorfra det har udviklet sig. I den engelske verden er Bowls et meget
-          udbredt spil. Bowls blev tidligere afviklet som underholdning for
-          adelen på slottenes og herregårdenes tæt klippede græsplæner. Nu
-          spilles det af unge og ældre i enhver engelsk by, også i lande med
-          historisk tilknytning til England."
-        </p>
-        <p>
-          Året var 1993 da en gruppe af aktive seniorer første gang blev
-          præsenteret for 'Bowls' i Hillerød. Initiativtageren var Mike Pestell,
-          der med sit firma Anglo-bowls håbede på en stor dansk tilslutning og
-          selv havde investeret i det kostbare udstyr. Der blev indgået en
-          aftale om leje af udstyr hos Anglobowls og baneleje i Hillerød
-          Tenniscenter, hvorefter sporten over de næste år langsomt voksede,
-          indtil man i 1996 enedes om at etablere Hillerød Bowlsklub. Hillerød
-          Bowlsklub stiftedes på generalforsamlingen den 7. oktober 1996 og har
-          siden tydeliggjort sig i lokal området, så der hver onsdag kan spilles
-          på ti måtter i Hillerød. Spillet, er især henvendt til seniorer med
-          mulighed for at spille i dagtimerne og således kan mødes med andre i
-          et aktivt fællesskab om såvel spillet som det sociale samvær.
-        </p>
-        <img
-          src="/greenBalls.svg"
-          alt="Grønne kugler dekoration"
-          draggable="false"
-        />
-      </div>
-    </DropDown>
+
+
+    <div id="interview">
+      <DropDown Title="Interview med formanden" Id="interview">
+        <p>Se interview med formanden</p>
+        <video controls>
+          <source
+            src="https://fjordtv.b-cdn.net/90_bowlshd1080p23022023071828.movFLASH.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </DropDown>
+    </div>
+
+    <div id="historie">
+      <DropDown Title="Historie" Id="historie">
+        <div class="grid_1-2">
+          <p>
+            Bowls - eller Lawn Bowls - har rødder i Ægypten for 5.000 år siden,
+            hvorfra det har udviklet sig. I den engelske verden er Bowls et
+            meget udbredt spil. Bowls blev tidligere afviklet som underholdning
+            for adelen på slottenes og herregårdenes tæt klippede græsplæner. Nu
+            spilles det af unge og ældre i enhver engelsk by, også i lande med
+            historisk tilknytning til England."
+          </p>
+          <p>
+            Året var 1993 da en gruppe af aktive seniorer første gang blev
+            præsenteret for 'Bowls' i Hillerød. Initiativtageren var Mike
+            Pestell, der med sit firma Anglo-bowls håbede på en stor dansk
+            tilslutning og selv havde investeret i det kostbare udstyr. Der blev
+            indgået en aftale om leje af udstyr hos Anglobowls og baneleje i
+            Hillerød Tenniscenter, hvorefter sporten over de næste år langsomt
+            voksede, indtil man i 1996 enedes om at etablere Hillerød Bowlsklub.
+            Hillerød Bowlsklub stiftedes på generalforsamlingen den 7. oktober
+            1996 og har siden tydeliggjort sig i lokal området, så der hver
+            onsdag kan spilles på ti måtter i Hillerød. Spillet, er især
+            henvendt til seniorer med mulighed for at spille i dagtimerne og
+            således kan mødes med andre i et aktivt fællesskab om såvel spillet
+            som det sociale samvær.
+          </p>
+          <img src="/greenBalls.svg" alt="Grønne kugler dekoration" />
+        </div>
+      </DropDown>
+    </div>
   </main>
 </Layout>
 
@@ -125,9 +126,15 @@ import DropDown from "../components/DropDown.astro";
     border-bottom: 1px solid var(--Black);
     display: flex;
     flex-direction: column;
-    position: sticky;
     top: 0;
     z-index: 999;
+  }
+
+  #hvordanText,
+  #regeler,
+  #interview,
+  #historie {
+    scroll-margin-top: 7rem; 
   }
 
   #subNavBar a {
@@ -187,10 +194,6 @@ import DropDown from "../components/DropDown.astro";
       top: 212px;
       transform: scaleX(-1);
     }
-
-    /* #hvordanText {
-      margin-top: -14vw;
-    } */
 
     ul {
       margin: 0;
