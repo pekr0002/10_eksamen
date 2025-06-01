@@ -4,7 +4,7 @@ const Name = Astro.props.Name;
 const Type = Astro.props.Type;
 
 const { event } = Astro.props;
-const Url = `../../public/eventpage/${event.EventImage}.webp`;
+const Url = `/eventpage/${event.EventImage}.webp`;
 console.log(event);
 ---
 
@@ -43,19 +43,11 @@ console.log(event);
     display: grid;
   }
   h2 {
-    color: var(--Rd-Red100, #d71330);
+    color: var(-Red100, #d71330);
     font-family: Cabin;
     font-size: 2rem;
     font-style: normal;
     font-weight: 500;
     line-height: 2.8125rem;
-  }
-
-  p,
-  h2,
-  h3,
-  h1 {
-    padding: 0;
-    margin: 5px;
   }
 </style>
