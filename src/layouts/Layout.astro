@@ -5,6 +5,7 @@ import "../styles/style.css";
 
 const Background = Astro.props.Background;
 const Page = Astro.props.Page;
+const Title = Astro.props.Title;
 ---
 
 <!doctype html>
@@ -14,7 +15,7 @@ const Page = Astro.props.Page;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Hillerød Bowls Klub</title>
+    <title>{Title} - Hillerød Bowls Klub</title>
     <!-- Cabin font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

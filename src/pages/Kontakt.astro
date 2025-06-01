@@ -3,7 +3,7 @@ import RedButton from "../components/RedButton.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout Background="variant2Mirror" Page="kontakt">
+<Layout Background="variant2Mirror" Page="kontakt" Title="Kontakt">
   <h1>Kontakt</h1>
   <div class="grid_3-2">
     <p id="kontaktText">
@@ -99,13 +99,9 @@ import Layout from "../layouts/Layout.astro";
   #lillemand {
     display: none;
   }
-  h1 {
-    padding: 2rem 2rem 0 2rem;
-  }
 
   h3 {
     padding: 0rem 1rem;
-    /* margin-bottom: -0.5rem; */
   }
 
   #kontaktText {
@@ -170,6 +166,7 @@ import Layout from "../layouts/Layout.astro";
     #lillemand {
       display: initial;
       width: 15vw;
+      max-width: 300px;
       transform: scaleX(-1);
       position: relative;
       top: 60px;
