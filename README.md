@@ -19,13 +19,13 @@ Alt på engelsk undtagen pages (og README ;))
 
 ## Branches
 
-[hvad man laver] - [navn]
+[HvadManLaver]-[Navn]
 eksempel: *Galleri-Penny*
 
 
 ## Commits
 
-add []
+add [ ]
 eksempel: *add fonts*
 
 
@@ -38,7 +38,7 @@ Generel CSS lægges i "styles"-undermappen
 Layout.astro ligger i "layouts"-undermappen
 
 ## public
-Alle billeder læggesi "public"-mappen. Billeder som bruges på flere sider, så som logo, favicon og Lillemand, lægges direkte i "public", men billeder som kun bruges på en side, lægges i en mappe med sidens navn. Eksempel: billeder til index lægger i "indexPage"-undermappen. 
+Alle billeder læggesi "public"-mappen. Billeder som bruges på flere sider, så som logo, favicon og Lillemand, lægges direkte i "public", men billeder som kun bruges på en side, lægges i en mappe med sidens navn. Eksempel: *billeder til index lægger i "indexPage"-undermappen.*
 
 # Syntax
 
