@@ -22,26 +22,32 @@ const data = await fetch(baseUrl + "?order=year.desc", options).then((res) => {
 ---
 
 <Layout Background="variant2Mirror" Page="gallery" Title="Galleri">
-  <!-- FARMAND HJÆLP -->
   <script>
+    // start when page is loaded
     document.addEventListener("DOMContentLoaded", () => {
-      document.querySelectorAll(".selector a").forEach(function (el: any) {
+      // find all buttons and loop through them
+      document.querySelectorAll(".galleryButton").forEach(function (el: any) {
+        // on each button listen for click
         el.addEventListener("click", (e: Event) => {
+          // get button from click event
           const target = e.target as HTMLElement;
-
+          // find all buttons and loop through them
           document.querySelectorAll(".galleryButton").forEach(function (
             el: any,
           ) {
-            console.log(el);
+            // make buttons inactive
             el.classList.remove("active");
           });
-
+          // make clicked button active
           target.classList.add("active");
+          // read value from button data-cup attribute
           const cup = target.dataset.cup;
+          // find all galleries and loop through them
           document.querySelectorAll(".galleryTab").forEach(function (el: any) {
+            // hide gallery
             el.style.display = "none";
           });
-
+          // show gallery matching clicked button
           document.getElementById(cup!)!.style.display = "block";
         });
       });

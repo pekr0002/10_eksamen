@@ -5,7 +5,7 @@ const { gallery, index } = Astro.props;
 const Url = `/gallerypage/${gallery.cup}/${gallery.cup}${gallery.year}.webp`;
 ---
 
-<!-- recive data(gallery) from api-->
+<!-- hightlight if first item in list -->
 <li class=`${gallery.cup} ${index===0 ? 'highlight':''} galleryItem`>
   <article>
     <h3>{gallery.cup} {gallery.year}</h3>

@@ -12,7 +12,7 @@ const Title = Astro.props.Title;
   <div class="grid">
     <ul>
       {
-        // filter api based on cup
+        // filter data based on cup
         Data.filter((d: any) => d.cup === `${Cup}`).map(
           (gallery: any, index: any) => (
             // results get send to "galleryCard"
