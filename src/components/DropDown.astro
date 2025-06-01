@@ -4,13 +4,32 @@ const Title = Astro.props.Title;
 ---
 
 <div class="dropDownContainer" id={Id}>
-  <h2>{Title}</h2>
+  <div id="dropDownTop">
+    <h2>{Title}</h2>
+    <img class="arrow" src="/dropDownArrow.svg" alt="arrow icon" />
+  </div>
   <div class="dropDownContent">
     <slot />
   </div>
 </div>
 
 <style>
+  #dropDownTop {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+  .arrow {
+    width: 3rem;
+    justify-self: right;
+    margin: auto 1rem;
+    transition: transform 0.3s ease;
+  }
+
+  .rotated {
+    transform: rotate(180deg);
+  }
+
   .dropDownContainer {
     background-color: var(--White);
     box-shadow: var(--BoxShadow);
@@ -40,5 +59,9 @@ const Title = Astro.props.Title;
     document
       .querySelector("#" + Id + " .dropDownContent")
       .classList.toggle("active");
+  }
+  // HER PENNY!!!
+  function rotateArrow() {
+    document.querySelector(".arrow").classList.toggle("rotated");
   }
 </script>
