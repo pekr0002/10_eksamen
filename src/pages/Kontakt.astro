@@ -4,78 +4,83 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout Background="variant2Mirror" Page="kontakt" Title="Kontakt">
-  <h1>Kontakt</h1>
-  <div class="grid_3-2">
-    <p id="kontaktText">
-      Hvis du er interresseret I at blive medlem eller bare vil kigge forbi en
-      dag, så skriv venligst en besked. Vi vender tilbage til dig med et svar
-      snarest muligt. <br />
-      <br />
-      Vi håber at se dig når vi spiller hver onsdag. <br /> Med venlig hilsen bestyrelsen.
-    </p>
-    <img id="lillemand" src="/lillemand.png" alt="Lillemand, vores maskot" />
-  </div>
-  <div class="grid_2-3">
-    <h2>Skriv til os</h2>
-    <div class="contactFormular">
-      <form action="action_page.php">
-        <p class="label">Navn</p>
-        <!-- <label for="name">Navn</label> -->
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Skriv her..."
-          required
-        />
-        <p class="label">E-mail</p>
-        <!-- <label for="email">E-mail</label> -->
-        <input
-          type="text"
-          id="email"
-          name="email"
-          placeholder="Skriv her..."
-          required
-        />
-        <p class="label">Besked</p>
-        <!-- <label for="message">Besked</label> -->
-        <textarea
-          id="message"
-          name="message"
-          placeholder="Skriv her..."
-          required></textarea>
-        <div id="submitButtonContainer">
-          <RedButton id="submitButton" Text="Send besked" />
+  <main>
+    <h1>Kontakt</h1>
+    <div class="grid_3-2">
+      <p id="kontaktText">
+        Hvis du er interresseret I at blive medlem eller bare vil kigge forbi en
+        dag, så skriv venligst en besked. Vi vender tilbage til dig med et svar
+        snarest muligt. <br />
+        <br />
+        Vi håber at se dig når vi spiller hver onsdag. <br /> Med venlig hilsen bestyrelsen.
+      </p>
+      <img id="lillemand" src="/lillemand.png" alt="Lillemand, vores maskot" />
+    </div>
+    <div class="grid_2-3">
+      <h2>Skriv til os</h2>
+      <div class="contactFormular">
+        <form action="action_page.php">
+          <p class="label">Navn</p>
+          <!-- <label for="name">Navn</label> -->
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Skriv her..."
+            required
+          />
+          <p class="label">E-mail</p>
+          <!-- <label for="email">E-mail</label> -->
+          <input
+            type="text"
+            id="email"
+            name="email"
+            placeholder="Skriv her..."
+            required
+          />
+          <p class="label">Besked</p>
+          <!-- <label for="message">Besked</label> -->
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Skriv her..."
+            required></textarea>
+          <div id="submitButtonContainer">
+            <RedButton id="submitButton" Text="Send besked" />
+          </div>
+        </form>
+      </div>
+
+      <div class="contactInfo">
+        <h3>Adresse</h3>
+        <div class="grid_icons">
+          <img class="icons" src="/kontaktPage/location.svg" alt="lokation" />
+          <p>Pibe Møllevej 7, 3400 Hillerød</p>
         </div>
-      </form>
-    </div>
-
-    <div class="contactInfo">
-      <h3>Adresse</h3>
-      <div class="grid_icons">
-        <img class="icons" src="/kontaktPage/location.svg" alt="lokation" />
-        <p>Pibe Møllevej 7, 3400 Hillerød</p>
-      </div>
-      <h3>Sociale Medier</h3>
-      <div class="grid_icons">
-        <img class="icons" src="/kontaktPage/instagram.svg" alt="instagram" />
-        <p>Instagram</p>
-      </div>
-      <h2>Formand</h2>
-      <p>Michael Wolff Hansen</p>
-      <h3>Formand tlf.</h3>
-      <div class="grid_icons">
-        <img class="icons" src="/kontaktPage/call-calling.svg" alt="telefon" />
-        <p>71 78 50 40</p>
-      </div>
-      <h3>Formand e-mail</h3>
-      <div class="grid_icons">
-        <img class="icons" src="/kontaktPage/mail.svg" alt="e-mail" />
-        <p>michael.wolff@hotmail.com</p>
+        <h3>Sociale Medier</h3>
+        <div class="grid_icons">
+          <img class="icons" src="/kontaktPage/instagram.svg" alt="instagram" />
+          <p>Instagram</p>
+        </div>
+        <h2>Formand</h2>
+        <p>Michael Wolff Hansen</p>
+        <h3>Formand tlf.</h3>
+        <div class="grid_icons">
+          <img
+            class="icons"
+            src="/kontaktPage/call-calling.svg"
+            alt="telefon"
+          />
+          <p>71 78 50 40</p>
+        </div>
+        <h3>Formand e-mail</h3>
+        <div class="grid_icons">
+          <img class="icons" src="/kontaktPage/mail.svg" alt="e-mail" />
+          <p>michael.wolff@hotmail.com</p>
+        </div>
       </div>
     </div>
-  </div>
-
+  </main>
   <!-- BESTYRRELSE??????? -->
 </Layout>
 

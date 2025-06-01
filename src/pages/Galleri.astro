@@ -45,98 +45,99 @@ const data = await fetch(baseUrl + "?order=year.desc", options).then((res) => {
       });
     });
   </script>
+  <main>
+    <h1>Galleri</h1>
 
-  <h1>Galleri</h1>
-
-  <div class="pictureGrid">
-    <img
-      src="/gallerypage/moodPicture1.webp"
-      alt="Formanden før et kast"
-      id="picture1"
-    />
-    <img
-      src="/gallerypage/moodPicture2.webp"
-      alt="billede fra oven af kuglerne"
-      id="picture2"
-    />
-    <img
-      src="/gallerypage/moodPicture3.webp"
-      alt="billede af området"
-      id="picture3"
-    />
-    <img
-      src="/gallerypage/moodPicture4.webp"
-      alt="Billede fra pauserummet"
-      id="picture4"
-    />
-  </div>
-  <section id="galleryWinners">
-    <div class="selector">
-      <SelectButton Class="active" Text="Galleri" Cup="galleri" />
-      <SelectButton Text="Scoremestre" Cup="scoremester" />
-      <SelectButton Text="Klubmestre" Cup="klubmester" />
-      <SelectButton Text="Julemestre" Cup="julemester" />
+    <div class="pictureGrid">
+      <img
+        src="/gallerypage/moodPicture1.webp"
+        alt="Formanden før et kast"
+        id="picture1"
+      />
+      <img
+        src="/gallerypage/moodPicture2.webp"
+        alt="billede fra oven af kuglerne"
+        id="picture2"
+      />
+      <img
+        src="/gallerypage/moodPicture3.webp"
+        alt="billede af området"
+        id="picture3"
+      />
+      <img
+        src="/gallerypage/moodPicture4.webp"
+        alt="Billede fra pauserummet"
+        id="picture4"
+      />
     </div>
-
-    <div id="galleri" class="galleryTab">
-      <h2>Galleri</h2>
-      <div class="grid">
-        <ul class="gallery">
-          <li>
-            <img
-              src="/gallerypage/galleri/galleryPicture1.webp"
-              alt="Billedet blev ikke indlæst"
-            />
-          </li>
-          <li>
-            <img
-              src="/gallerypage/galleri/galleryPicture2.webp"
-              alt="Billedet blev ikke indlæst"
-            />
-          </li>
-          <li>
-            <img
-              src="/gallerypage/galleri/galleryPicture3.webp"
-              alt="Billedet blev ikke indlæst"
-            />
-          </li>
-          <li>
-            <img
-              src="/gallerypage/galleri/galleryPicture4.webp"
-              alt="Billedet blev ikke indlæst"
-            />
-          </li>
-          <li>
-            <img
-              src="/gallerypage/galleri/galleryPicture5.webp"
-              alt="Billedet blev ikke indlæst"
-            />
-          </li>
-          <li>
-            <img
-              src="/gallerypage/galleri/galleryPicture6.webp"
-              alt="Billedet blev ikke indlæst"
-            />
-          </li>
-          <li>
-            <img
-              src="/gallerypage/galleri/galleryPicture7.webp"
-              alt="Billedet blev ikke indlæst"
-            />
-          </li>
-          <li>
-            <img
-              src="/gallerypage/galleri/galleryPicture8.webp"
-              alt="Billedet blev ikke indlæst"
-            />
-          </li>
-        </ul>
+    <section id="galleryWinners">
+      <div class="selector">
+        <SelectButton Class="active" Text="Galleri" Cup="galleri" />
+        <SelectButton Text="Scoremestre" Cup="scoremester" />
+        <SelectButton Text="Klubmestre" Cup="klubmester" />
+        <SelectButton Text="Julemestre" Cup="julemester" />
       </div>
-    </div>
-    <GalleryTab Data={data} Title="Klubmestre" Cup="klubmester" />
-    <GalleryTab Data={data} Title="Scoremestre" Cup="scoremester" />
-    <GalleryTab Data={data} Title="Julemestre" Cup="julemester" />
-  </section>
+
+      <div id="galleri" class="galleryTab">
+        <h2>Galleri</h2>
+        <div class="grid">
+          <ul class="gallery">
+            <li>
+              <img
+                src="/gallerypage/galleri/galleryPicture1.webp"
+                alt="Billedet blev ikke indlæst"
+              />
+            </li>
+            <li>
+              <img
+                src="/gallerypage/galleri/galleryPicture2.webp"
+                alt="Billedet blev ikke indlæst"
+              />
+            </li>
+            <li>
+              <img
+                src="/gallerypage/galleri/galleryPicture3.webp"
+                alt="Billedet blev ikke indlæst"
+              />
+            </li>
+            <li>
+              <img
+                src="/gallerypage/galleri/galleryPicture4.webp"
+                alt="Billedet blev ikke indlæst"
+              />
+            </li>
+            <li>
+              <img
+                src="/gallerypage/galleri/galleryPicture5.webp"
+                alt="Billedet blev ikke indlæst"
+              />
+            </li>
+            <li>
+              <img
+                src="/gallerypage/galleri/galleryPicture6.webp"
+                alt="Billedet blev ikke indlæst"
+              />
+            </li>
+            <li>
+              <img
+                src="/gallerypage/galleri/galleryPicture7.webp"
+                alt="Billedet blev ikke indlæst"
+              />
+            </li>
+            <li>
+              <img
+                src="/gallerypage/galleri/galleryPicture8.webp"
+                alt="Billedet blev ikke indlæst"
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
+      <GalleryTab Data={data} Title="Klubmestre" Cup="klubmester" />
+      <GalleryTab Data={data} Title="Scoremestre" Cup="scoremester" />
+      <GalleryTab Data={data} Title="Julemestre" Cup="julemester" />
+    </section>
+  </main>
 </Layout>
 <style>
   ul,

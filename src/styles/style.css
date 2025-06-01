@@ -84,3 +84,24 @@ li {
   color: var(--Black);
   line-height: 1.5rem;
 }
+
+/* background variations */
+.variant1,
+.variant1Mirror,
+.variant2,
+.variant2Mirror {
+  background-position: center;
+  background-repeat: repeat-y;
+}
+.variant1 {
+  background-image: url("/backgroundCurves/kurve1.svg");
+}
+.variant1Mirror {
+  background-image: url("/backgroundCurves/kurve1-mirrored.svg");
+}
+.variant2 {
+  background-image: url("/backgroundCurves/kurve2.svg");
+}
+.variant2Mirror {
+  background-image: url("/backgroundCurves/kurve2-mirrored.svg");
+}

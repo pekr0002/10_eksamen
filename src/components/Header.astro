@@ -3,195 +3,201 @@ const Page = Astro.props.Page;
 ---
 
 <header>
-  <!-- <div class="headerContents"> -->
-  <!-- Hamburger -->
-  <div class="hamburger" id="hamburger">☰</div>
+  <div class="headerContents">
+    <!-- Hamburger -->
+    <div class="hamburger" id="hamburger">☰</div>
 
-  <!-- Mobile -->
-  <nav id="mobileMenu" class="hidden">
-    <a href="/index.html" class=`${Page==="forside" ? 'active':''}`>Forside</a>
-    <a href="/OmSpillet" class=`${Page==="omSpillet" ? 'active':''}`
-      >Om spillet</a
-    >
-    <a href="/Galleri" class=`${Page==="gallery" ? 'active':''}`>Galleri</a>
-    <a href="/Events" class=`${Page==="events" ? 'active':''}`>Events</a>
+    <!-- Mobile -->
+    <nav id="mobileMenu" class="hidden">
+      <a href="/index.html" class=`${Page==="forside" ? 'active':''}`>Forside</a
+      >
+      <a href="/OmSpillet" class=`${Page==="omSpillet" ? 'active':''}`
+        >Om spillet</a
+      >
+      <a href="/Galleri" class=`${Page==="gallery" ? 'active':''}`>Galleri</a>
+      <a href="/Events" class=`${Page==="events" ? 'active':''}`>Events</a>
 
-    <a href="/Kontakt" class=`${Page==="Kontakt" ? 'active':''}`>Spil med os</a>
-  </nav>
+      <a href="/Kontakt" class=`${Page==="Kontakt" ? 'active':''}`
+        >Spil med os</a
+      >
+    </nav>
 
-  <!-- Desktop -->
-  <div id="headerLeft" class="desktopMenu">
-    <a href="/index.html" class=`${Page==="forside" ? 'active':''}`>Forside</a>
-    <a href="/OmSpillet" class=`${Page==="omSpillet" ? 'active':''}`
-      >Om spillet</a
-    >
-    <a href="/Galleri" class=`${Page==="gallery" ? 'active':''}`>Galleri</a>
-  </div>
-  <a id="logoContainer" href="
-    /index.html">
-    <img id="logo" src="/greenLogo.svg" alt="logo" />
-  </a>
-  <div class="desktopMenu" id="headerRight">
-    <a href="/Events" class=`${Page==="events" ? 'active':''}`>Events</a>
+    <!-- Desktop -->
+    <div id="headerLeft" class="desktopMenu">
+      <a href="/index.html" class=`${Page==="forside" ? 'active':''}`>Forside</a
+      >
+      <a href="/OmSpillet" class=`${Page==="omSpillet" ? 'active':''}`
+        >Om spillet</a
+      >
+      <a href="/Galleri" class=`${Page==="gallery" ? 'active':''}`>Galleri</a>
+    </div>
+    <a id="logoContainer" href="/index.html">
+      <img id="logo" src="/greenLogo.svg" alt="logo" />
+    </a>
+    <div class="desktopMenu" id="headerRight">
+      <a href="/Events" class=`${Page==="events" ? 'active':''}`>Events</a>
 
-    <div id="button">
-      <a id="spilMedOs" href="/Kontakt">Spil med os</a>
+      <div id="button">
+        <a id="spilMedOs" href="/Kontakt">Spil med os</a>
+      </div>
     </div>
   </div>
-</header>
 
-<script type="module">
-  const hamburger = document.getElementById("hamburger");
-  const mobileMenu = document.getElementById("mobileMenu");
+  <script type="module">
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
 
-  hamburger.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-  });
-</script>
+    hamburger.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
 
-<style>
-  header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 1rem 3rem;
-    text-align: center;
-    align-items: center;
-  }
-
-  a {
-    text-transform: uppercase;
-  }
-  /* .headerContents {
-    max-width: 1440px;
-    margin: 0 auto;
-  } */
-  a:hover {
-    color: var(--Red100);
-  }
-
-  .active {
-    color: var(--Red100);
-    text-decoration: underline;
-  }
-
-  #logoContainer {
-    grid-column: 2;
-    grid-row: 1;
-    align-self: center;
-    justify-self: center;
-    display: grid;
-  }
-  /* Desktop: */
-  @media (min-width: 1000px) {
+  <style>
     header {
-      background-color: var(--White);
-      border-bottom: 1px solid var(--Black);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    .hamburger,
-    #mobileMenu {
-      display: none;
+    a {
+      text-transform: uppercase;
     }
-
-    .desktopMenu {
-      display: flex;
-    }
-
-    #headerLeft {
+    .headerContents {
+      max-width: 1440px;
+      margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      justify-content: space-evenly;
-    }
-
-    #headerRight {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      justify-content: space-evenly;
-    }
-
-    img {
-      width: 25vw;
-      height: auto;
-      justify-self: center;
-    }
-
-    a {
-      font-size: 2.2vw;
-      justify-content: center;
+      padding: 1rem 3rem;
+      text-align: center;
       align-items: center;
     }
-
-    #spilMedOs {
-      color: var(--White);
-      font-weight: 400;
+    a:hover {
+      color: var(--Red100);
     }
 
-    #button {
-      background-color: var(--Red100);
-      border-radius: var(--BorderRadiusBig);
-      padding: 0.35rem 1.5rem;
+    .active {
+      color: var(--Red100);
+      text-decoration: underline;
     }
-    #button:hover {
-      background-color: var(--Green100);
-      border-radius: var(--BorderRadiusBig);
-      color: var(--White);
-    }
-  }
 
-  @media (min-width: 1600px) {
-    a {
-      font-size: 34px;
-    }
-  }
-
-  /* Mobile: */
-  @media (max-width: 999px) {
-    header {
-      background-color: var(--White);
-      border-bottom: 1px solid var(--Black);
+    #logoContainer {
+      grid-column: 2;
+      grid-row: 1;
+      align-self: center;
+      justify-self: center;
       display: grid;
-      grid-template-columns: 1fr 3fr 1fr;
-      gap: 2rem;
     }
-    .desktopMenu {
-      display: none;
+    /* Desktop: */
+    @media (min-width: 1101px) {
+      header {
+        background-color: var(--White);
+        border-bottom: 1px solid var(--Black);
+      }
+
+      .hamburger,
+      #mobileMenu {
+        display: none;
+      }
+
+      .desktopMenu {
+        display: flex;
+      }
+
+      #headerLeft {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: space-evenly;
+      }
+
+      #headerRight {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-evenly;
+      }
+
+      img {
+        width: 25vw;
+        height: auto;
+        justify-self: center;
+      }
+
+      a {
+        font-size: 2.2vw;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+      }
+
+      #spilMedOs {
+        color: var(--White);
+        font-weight: 400;
+      }
+
+      #button {
+        background-color: var(--Red100);
+        border-radius: var(--BorderRadiusBig);
+        padding: 0.35rem 1.5rem;
+      }
+      #button:hover {
+        background-color: var(--Green100);
+        border-radius: var(--BorderRadiusBig);
+        color: var(--White);
+      }
     }
 
-    .hamburger {
-      display: block;
-      font-size: 2rem;
-      padding: 1rem;
-      justify-self: end;
-      grid-column: 3;
+    @media (min-width: 1362px) {
+      a {
+        font-size: 30px;
+      }
     }
 
-    #mobileMenu {
-      display: flex;
-      flex-direction: column;
-      background-color: var(--White);
-      padding: 1rem;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      text-align: end;
-      border-bottom: 1px solid var(--Black);
-    }
+    /* Mobile: */
+    @media (max-width: 1100px) {
+      .headerContents {
+        background-color: var(--White);
+        border-bottom: 1px solid var(--Black);
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        gap: 2rem;
+      }
+      .desktopMenu {
+        display: none;
+      }
 
-    #mobileMenu.hidden {
-      display: none;
-    }
+      .hamburger {
+        display: block;
+        font-size: 2rem;
+        padding: 1rem;
+        justify-self: end;
+        grid-column: 3;
+        cursor: pointer;
+      }
 
-    #logo {
-      height: 3rem;
-      width: auto;
-    }
+      #mobileMenu {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--White);
+        padding: 1rem;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        text-align: end;
+        border-bottom: 1px solid var(--Black);
+      }
 
-    a {
-      font-size: 2.5rem;
+      #mobileMenu.hidden {
+        display: none;
+      }
+
+      #logo {
+        height: 3rem;
+        width: auto;
+      }
+
+      a {
+        font-size: 2.5rem;
+      }
     }
-  }
-</style>
+  </style>
+</header>

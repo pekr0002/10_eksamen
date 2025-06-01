@@ -21,15 +21,17 @@ const data = await fetch(url, options).then((res) => {
 ---
 
 <Layout Background="variant1" Page="events" Title="Events">
-  <h1>EVENTS</h1>
-  <p>
-    Vi spiller hver onsdag, men har også to fester om året: en sommerfest og en
-    julefrokost. Her kan du finde datoer på de opkommende begivenheder klubben
-    holder.
-  </p>
-  <ul class="responsiveGrid">
-    {data.map((event) => <EventCard {event} />)}
-  </ul>
+  <main>
+    <h1>EVENTS</h1>
+    <p>
+      Vi spiller hver onsdag, men har også to fester om året: en sommerfest og
+      en julefrokost. Her kan du finde datoer på de opkommende begivenheder
+      klubben holder.
+    </p>
+    <ul class="responsiveGrid">
+      {data.map((event) => <EventCard {event} />)}
+    </ul>
+  </main>
 </Layout>
 
 <style>
